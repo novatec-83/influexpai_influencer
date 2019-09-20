@@ -1,7 +1,11 @@
 import {Routes} from '@angular/router';
 import {AdminLayoutComponent} from './layouts/admin/admin-layout.component';
 import {AuthLayoutComponent} from './layouts/auth/auth-layout.component';
+import {PostSignupComponent} from "./post-signup/post-signup.component";
+
+
 import { AuthGuard } from './_guards/index';
+import { SigninComponent } from './authentication/signin/signin.component';
 
 
 
@@ -113,6 +117,14 @@ export const AppRoutes: Routes = [{
   component: AuthLayoutComponent,
   children: [
     {
+      path: '',
+      loadChildren: './post-signup/post-signup.module#PostSignupModule'
+    },
+    // {
+    //   path: 'signin',
+    //   component: SigninComponent
+    // },
+    {
       path: 'authentication',
       loadChildren: './authentication/authentication.module#AuthenticationModule'
     }, {
@@ -125,8 +137,9 @@ export const AppRoutes: Routes = [{
     ]
 },
 
-  {
-    path: '**',
-    redirectTo: 'error/404'
-  }];
+  // {
+  //   path: '**',
+  //   redirectTo: 'error/404'
+  // }
+];
 

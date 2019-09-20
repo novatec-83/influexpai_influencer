@@ -8,7 +8,7 @@
 </div>
 
 <div md-dialog-actions>
-  <button mat-button [md-dialog-close]="data.animal" tabindex="2">Ok</button>
+  <button mat-button [mat-dialog-close]="data.animal" tabindex="2">Ok</button>
   <button mat-button (click)="onNoClick()" tabindex="-1">No Thanks</button>
 </div>
 -->
@@ -34,7 +34,7 @@
   <div class="col-lg-1">
   </div>
   <div class="col-lg-4">
-   <img md-card-image src="{{currentUser.image_url}}" style="width: auto;height: auto" alt="Image">
+   <img mat-card-image src="{{currentUser.image_url}}" style="width: auto;height: auto" alt="Image">
   </div>
 
   <div class="col-lg-7">

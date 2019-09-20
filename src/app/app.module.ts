@@ -30,6 +30,7 @@ export function createTranslateLoader(http: Http) {
 
 }
 import {AuthServiceConfig, SocialLoginModule, LinkedinLoginProvider, GoogleLoginProvider, FacebookLoginProvider} from 'ng4-social-login';
+import { SigninComponent } from './authentication/signin/signin.component';
 const config= new AuthServiceConfig([
   {
     id: LinkedinLoginProvider.PROVIDER_ID,
@@ -55,7 +56,7 @@ export function provideConfig() {
     AdminLayoutComponent,
     AuthLayoutComponent,
             // AccountSettingComponent,
-
+// SigninComponent
     // PostSignupComponent
   ],
   imports: [

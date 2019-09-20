@@ -9,7 +9,8 @@ import {NewpasswordComponent} from './newpassword/newpassword.component';
 export const AuthenticationRoutes: Routes = [
   {
     path: '',
-    children: [{
+    children: [
+      {
       path: 'signin',
       component: SigninComponent
     },
