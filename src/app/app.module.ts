@@ -10,9 +10,26 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarModule } from 'ng-sidebar';
 import {CommonModule} from '@angular/common';
+import {BlackgeeksRecaptchaModule} from 'recaptcha-blackgeeks';
+import {SlimLoadingBarModule} from "ng2-slim-loading-bar";
+
 import {NgTemplateOutlet} from '@angular/common';
 import {OutletContext} from '@angular/router';
+import { FooterComponent } from './footer/footer.component';
+import {AgenciesComponent} from './Agencies/Agencies.component';
+import { BrandComponent } from './brand/brand.component';
 
+import {PricingComponent} from './pricing/pricing.component';
+import {
+  BlogComponent,
+  // ContactComponent,
+  HowItWorksComponent,
+  PrivacyAndPolicyComponent,
+  TermsAndConditionsComponent,
+  TermsComponent,
+  WhatIsInfluexpaiComponent,
+  PrivacyComponent
+} from './contact/contact.component';
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
@@ -20,10 +37,11 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { SharedModule } from './shared/shared.module';
 import { AuthGuard } from './_guards/index';
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
-import {MatButtonModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatInputModule, MatSlideToggleModule, MatIconModule, MatCardModule, MatSelectModule, MatOptionModule, MatRippleModule, MatTableModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {App_service} from './app.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactComponent } from './contact/contact.component';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -31,6 +49,9 @@ export function createTranslateLoader(http: Http) {
 }
 import {AuthServiceConfig, SocialLoginModule, LinkedinLoginProvider, GoogleLoginProvider, FacebookLoginProvider} from 'ng4-social-login';
 import { SigninComponent } from './authentication/signin/signin.component';
+import { InfluencersComponent } from './influencers/influencers.component';
+import { RecapchaModule } from './recapcha/recapcha.module';
+import { TextMaskModule } from 'angular2-text-mask';
 const config= new AuthServiceConfig([
   {
     id: LinkedinLoginProvider.PROVIDER_ID,
@@ -54,12 +75,41 @@ export function provideConfig() {
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent,
+    PricingComponent,
+    AuthLayoutComponent,FooterComponent,BlogComponent,AgenciesComponent,
+    ContactComponent,BrandComponent,
+    InfluencersComponent,
+    HowItWorksComponent,
+    PrivacyAndPolicyComponent,
+    PrivacyComponent,
+    TermsAndConditionsComponent,
+    TermsComponent,
+    WhatIsInfluexpaiComponent
             // AccountSettingComponent,
 // SigninComponent
     // PostSignupComponent
   ],
   imports: [
+
+    BrowserModule,
+    MatSlideToggleModule,
+    BlackgeeksRecaptchaModule,
+    SlimLoadingBarModule,
+    // PreloaderModule,
+    ReactiveFormsModule,
+    HttpModule,
+    SocialLoginModule,
+    FormsModule,
+    MatIconModule,
+    RecapchaModule,
+    TextMaskModule,
+    MatCardModule, MatSelectModule, MatOptionModule, MatFormFieldModule, MatInputModule, MatRippleModule, MatTableModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(AppRoutes),
+    HttpClientModule,
+    // JwSocialButtonsModule,
+
+
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,

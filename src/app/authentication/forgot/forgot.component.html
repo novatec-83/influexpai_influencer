@@ -15,7 +15,7 @@
         <div class="form-control-feedback" *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched">Email is required.</div>
         <div class="form-control-feedback" style="color: red" *ngIf="form.controls['uname'].hasError('pattern') ">Please Enter Valid Email.</div>
       </fieldset>
-      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Reset Password</button>
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid" >Reset Password</button>
     </form>
   </div>
 </div>

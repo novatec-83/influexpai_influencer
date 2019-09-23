@@ -105,7 +105,18 @@ signout()
 
   localStorage.clear();
     this._nav.navigate(['/authentication/signin']);
+    this.logoutsweetalert();
 
+}
+logoutsweetalert() {
+
+  swal({
+    title: "influexpai<br> Thanks for visiting us",
+    type: "success",
+    showConfirmButton: false,
+    timer: 2000,
+  })
+  // this.showlink = false;
 }
 
 

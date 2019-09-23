@@ -222,7 +222,7 @@
 
     <div class="main-content">
       <router-outlet></router-outlet>
-      <nav class="navbar custom-navbar navbar-light main-footer small">
+      <!-- <nav class="navbar custom-navbar navbar-light main-footer small">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link copy-right" href="javascript:;">
@@ -231,11 +231,15 @@
           </li>
         </ul>
         <ul class="navbar-nav hidden-xs-down">
-          <!-- <li class="nav-item">
+
+
+          <li class="nav-item">
             <a class="nav-link copy-right" href="javascript:;">Made with love on Earth</a>
-          </li> -->
+          </li>
+
+
         </ul>
-      </nav>
+      </nav> -->
     </div>
   </div>
 
@@ -256,7 +260,7 @@
 </ng-template>
 
 
-<div class="configuration hidden-sm-down" [ngClass]="{'active': showSettings}">
+<!-- <div class="configuration hidden-sm-down" [ngClass]="{'active': showSettings}">
   <div class="configuration-cog" (click)="showSettings = !showSettings">
     <i class="icon icon-basic-mixer2"></i>
   </div>
@@ -327,4 +331,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+
+<app-footer></app-footer>

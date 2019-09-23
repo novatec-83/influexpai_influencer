@@ -28,7 +28,7 @@
           </mat-form-field>
           <mat-form-field class=" md-size">
             <input [type]="hide ? 'password' : 'text'"  matInput placeholder="Password" tabindex=2 [formControl]="passwordFormControl" [(ngModel)]="model.password" required>
-<!--            <span class="pointer" data-toggle="tooltip" title=" {{hide? 'Show' : 'Hide'}} Password" matSuffix (click)="hide = !hide">{{  hide ? show : nshow }}</span>-->
+          <!--<span class="pointer" data-toggle="tooltip" title=" {{hide? 'Show' : 'Hide'}} Password" matSuffix (click)="hide = !hide">{{  hide ? show : nshow }}</span>-->
             <i *ngIf= "hide" class="fa fa-eye" style="font-size: 23px; float: right; margin-top: -15px; cursor: pointer" title="Show Password" (click)="hide = !hide"></i>
             <i *ngIf= "!hide" class="fa fa-eye-slash" style="font-size: 23px;  float: right; margin-top: -15px;  cursor: pointer" title="Hide Password" (click)="hide = !hide"></i>
 
