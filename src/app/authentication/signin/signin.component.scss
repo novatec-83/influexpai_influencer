@@ -18,6 +18,13 @@
  #or{
    margin-left: 45%;
  }
+ .eye-icon{
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+ }
  //input{
  //  width: 95%;
  //  margin-left: 1%;
@@ -56,7 +63,7 @@
    background: #c31010;
  }
  .card [data-background-color] {
-   margin: -20px 17px 20px;
+   margin: -20px 17px 42px;
    border-radius:5px;
    //padding:15px;\
    position:relative}
@@ -135,7 +142,7 @@
 .privacy a{
   // font-weight: 500;
   font-size: 14px;
-  color: blue;
+  color: #6991c5;
   // padding: 0 20px;
   font-weight: bold;
 }
@@ -144,10 +151,14 @@
    font-size: 16px;
  }
 .forgot-pass{
-  color: blue!important;
+  color: #6991c5!important;
 }
 
  .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
    background-color: rgba(255, 0, 0, 0.62);
  }
-
+.sign-up{
+  font-size: 14px;
+  color: #6991c5;
+  font-weight: 700;
+}

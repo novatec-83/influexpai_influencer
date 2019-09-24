@@ -26,18 +26,12 @@ body{
 
 
 /*Start From custome */
-.sh-signup-form-fix .mat-input-infix {
-  border-top: 0 solid transparent;
-  padding-bottom: 10px;
-}
-input{
-  padding-top: 10px!important;
+.mat-form-field-infix {
+  border-top: none!important;
+  padding: 5px 0!important;
 }
 .sh-signup-form-fix .mat-input-underline {
   bottom: 18px
-}
-.sh-signup-form-fix .mat-input-wrapper {
-  padding-bottom: 10px
 }
 /*.sh-signup-form-fix .mat-select {*/
 /*  padding-bottom: 10px*/
@@ -82,7 +76,7 @@ input{
   margin: 0!important
 }
 .sh-signup-form-fix .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-placeholder {
-  transform: translateY(-10px) scale(.75) perspective(100px) translateZ(0)!important;
+  transform: translateY(-25px) scale(.75) perspective(100px) translateZ(0)!important;
   -ms-transform: translateY(5px) scale(.75)!important
 }
 .sh-signup-form-fix .mat-form-field-prefix .mat-icon {
@@ -103,26 +97,27 @@ input{
 .app ng-sidebar > .sidebar-panel.ng-sidebar .menu{
   padding: 68px 0 110px !important;
 }
-.app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-item {
+/* .app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-item {
   border-bottom: 1px solid #CCCCCC!important;
   transition: .5s;
-}
+} */
 .app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-link{
   color: #000000;
-  padding-left: 7px;
+  padding-left: 41px;
   display: flow-root;
+  position: relative;
 
 }
 .app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-link :hover{
   color: white;
 }
-.app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-item:active {
+/* .app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-item:active {
   background: black;
   color: white;
-}
-.app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-item:hover{
+} */
+/* .app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-item:hover{
   border-left: 4px solid #000;
-}
+} */
 .connect-box{
   width: 70%;
   margin: 0 auto;

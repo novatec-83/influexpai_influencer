@@ -53,7 +53,7 @@
   color: #000;
 }
 .navigation-item i{
-  color: #000000!important;
+  color: #555555!important;
   position: absolute;
   left: 14px;
   
@@ -103,16 +103,19 @@
   // border-bottom: 1px solid #ccc!important;
 }
 .drop-btn{
-  padding: 7px 8px;
+  padding: 16px 36px;
   border: none;
-  background: #fff;
   color:#000000!important;
   font-weight: bold;
+  width: 100%;
+  background: transparent;
+  
 }
 .drop-btn:hover{
 
-  background-color: #1B3764!important;
-  color: white!important
+  color: #000 !important;
+  background-color: #f5f5f5;
+  width: 100%;
 }
 .drop-btn i{
   color: #c00;
@@ -284,14 +287,15 @@ fieldset {
   display: none;
 }
 
-nav ul li .navigation-link:hover{
-  background-color: #1B3764!important;
-  color: white!important
+.navigation-item a:hover{
+  background: #f5f5f5!important;
+  color: #888!important
 }
 
-nav ul li a:active {
-  background-color: #1B3764!important;
-  color: white!important
+.navigation-item.open a {
+  background: #f5f5f5!important;
+  border-bottom: 1px solid #d9dbdc;
+  border-top: 1px solid #d9dbdc;
 }
 
 // nav ul li a img:hover{
@@ -333,4 +337,7 @@ nav ul li a .nav-img:hover{
   background: white!important
 }
 
+// .navigation-link:hover .fa{
+//   color: #fff !important;
+// }
 
