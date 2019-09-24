@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 import {LoaderModule} from './loader/loader.module';
@@ -52,6 +52,7 @@ import { SigninComponent } from './authentication/signin/signin.component';
 import { InfluencersComponent } from './influencers/influencers.component';
 import { RecapchaModule } from './recapcha/recapcha.module';
 import { TextMaskModule } from 'angular2-text-mask';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 const config= new AuthServiceConfig([
   {
     id: LinkedinLoginProvider.PROVIDER_ID,
@@ -69,10 +70,21 @@ const config= new AuthServiceConfig([
 export function provideConfig() {
   return config;
 }
-
-
+// @NgModule({
+// imports:[
+//   NgTemplateOutlet
+// ]
+// })
 @NgModule({
+  
   declarations: [
+    NgTemplateOutlet
+  ]
+})
+@NgModule({
+  
+  declarations: [
+    
     AppComponent,
     AdminLayoutComponent,
     PricingComponent,
@@ -90,7 +102,7 @@ export function provideConfig() {
     // PostSignupComponent
   ],
   imports: [
-
+    
     BrowserModule,
     MatSlideToggleModule,
     BlackgeeksRecaptchaModule,
@@ -120,6 +132,7 @@ export function provideConfig() {
     FormsModule,
     CommonModule,
     HttpModule,
+    
     ReactiveFormsModule,
     ToastModule.forRoot(),
     TranslateModule.forRoot({
@@ -137,6 +150,7 @@ export function provideConfig() {
   providers: [
     {provide: AuthServiceConfig,  useFactory: provideConfig},
     AuthGuard, App_service],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

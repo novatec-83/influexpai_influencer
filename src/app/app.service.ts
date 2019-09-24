@@ -29,20 +29,25 @@ export class App_service {
   showerror(){
     this.toast.error('Some Server Side Error')
   }
-  register_user(username, name, email , password, country ,
-               relationship , education, phone, state, city, employment_status, gender ){
+  register_user(username, first_name,last_name, email , password, country ,relationship,education,
+                phone, state, city,address, employment_status, gender ){
     return this.Http.post(Config.api + '/influencer_signup/',
       {
         'username': username ,
-        'name': name,
+        // 'name': name='Muhammad',
+        // 'last_name':lastname='Abdullah Khan',
+        'first_name': first_name,
+        'last_name': last_name,
+        // lastname,
         'email': email ,
         'password': password,
         'country': country,
-        'relationship': relationship,
-        'education': education,
+        'relationship': relationship='null',
+        'education': education='null',
         'phone': phone,
         'state': state,
         'city': city,
+        'address':address,
         'employment_status': employment_status,
         'gender': gender,
       }).map((res:Response)=>{
