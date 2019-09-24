@@ -58,7 +58,9 @@
   left: 14px;
   
 }
-
+.ng-sidebar{
+  position: absolute!important
+}
 
 
 
@@ -139,8 +141,8 @@
 .dropdown-ul li a:hover{
   // border-left: 4px solid #cc0000;
   // color: #c00!important;
-  background-color: #1B3764!important;
-  color: white!important
+  background-color: #f5f5f5!important;
+  color: #555555!important
 }
 .dropdown-menu{
   width: 95% !important;
@@ -289,7 +291,7 @@ fieldset {
 
 .navigation-item a:hover{
   background: #f5f5f5!important;
-  color: #888!important
+  color: #555555!important
 }
 
 .navigation-item.open a {
