@@ -3,13 +3,74 @@ import {AdminLayoutComponent} from './layouts/admin/admin-layout.component';
 import {AuthLayoutComponent} from './layouts/auth/auth-layout.component';
 import {PostSignupComponent} from "./post-signup/post-signup.component";
 
-
+import {
+  BlogComponent,
+  ContactComponent,
+  HowItWorksComponent,
+  PrivacyAndPolicyComponent,
+  TermsAndConditionsComponent,
+  TermsComponent,
+  PrivacyComponent,
+  WhatIsInfluexpaiComponent
+} from './contact/contact.component';
+import {BrandComponent} from './brand/brand.component';
+import {InfluencersComponent} from './influencers/influencers.component';
+import {AgenciesComponent} from './Agencies/Agencies.component'
 import { AuthGuard } from './_guards/index';
+import {PricingComponent} from './pricing/pricing.component';
+
 import { SigninComponent } from './authentication/signin/signin.component';
 
 
 
-export const AppRoutes: Routes = [{
+export const AppRoutes: Routes = [
+  {
+  
+  
+    path : 'agencies', component: AgenciesComponent
+},
+{
+    path: 'contact',
+    component: ContactComponent
+},
+{
+    path: 'what-is-InfluExpAI',
+    component: WhatIsInfluexpaiComponent
+},
+{
+    path: 'How-It-Works',
+    component: HowItWorksComponent
+},
+{
+    path: 'Terms-and-Conditions',
+    component: TermsAndConditionsComponent
+},
+{
+    path: 'terms',
+    component: TermsComponent
+},
+{
+    path: 'privacy_policy',
+    component: PrivacyAndPolicyComponent
+},
+{
+    path: 'privacy',
+    component: PrivacyComponent
+},
+
+{
+    path: 'brand',
+    component: BrandComponent
+},
+{
+    path: 'influencers',
+    component: InfluencersComponent
+},
+{
+    path: 'blog',
+    component: BlogComponent
+},
+{
   path: '',
   component: AdminLayoutComponent,
   children: [
@@ -110,6 +171,9 @@ export const AppRoutes: Routes = [{
   }]
 },
 
+{ path: 'pricing', component: PricingComponent },
+{path: 'contactus', component: ContactComponent},
+
 
 
  {
@@ -120,10 +184,15 @@ export const AppRoutes: Routes = [{
       path: '',
       loadChildren: './post-signup/post-signup.module#PostSignupModule'
     },
+//     {path: 'forgot',
+//  loadChildren: './forgot/forgot.module#ForgotModule'},
     // {
     //   path: 'signin',
     //   component: SigninComponent
     // },
+
+
+    // { path: 'forgot',  loadChildren: './authentication/forgot/forgot.module#ForgotModule' },
     {
       path: 'authentication',
       loadChildren: './authentication/authentication.module#AuthenticationModule'

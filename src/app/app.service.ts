@@ -20,7 +20,7 @@ export class App_service {
   InstaResponse: any={};
   CurrentUser: any;
   constructor(private _nav: Router,
-              private https: Http, private toast: ToastsManager, private Http: HttpService
+              private https: Http, private toast: ToastsManager, private Http: HttpService,private http: Http
     ,@Inject(PLATFORM_ID) private platformId: Object)
   {
 
@@ -58,6 +58,27 @@ export class App_service {
 
     })
   }
+
+  get_All_Blog(){
+    return this.http.get(Config.api + '/getallblog/').map((response: Response) => response.json());
+
+}
+
+
+  contact_Us(name, email, phone, message) {
+    return this.http.post('http://192.168.29.166:8000/contact-us/',
+    // http://192.168.29.166:8000/contact-us/
+        {
+            'name':name,
+            'email' :email,
+            'mobile_no': phone,
+            'message' :message
+
+        }).map((response: Response) => {
+            console.log(response)
+        });
+}
+
 
           getUserData() {
             // let currentUser= localStorage.getItem('currentUser');
