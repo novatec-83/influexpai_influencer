@@ -298,7 +298,7 @@ export class SignupComponent implements OnInit {
         this.model.email,
         this.model.password,
         this.model.country,
-        this.model.relationship,
+        this.model.relationship='null',
         this.model.education,
         this.model.phone,
         this.model.state,

@@ -5,9 +5,11 @@ import {Config} from '../../config';
 import {Headers, Response, Http} from '@angular/http';
 import {FacebookService, InitParams, LoginResponse} from 'ngx-facebook';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { HttpClient } from '@angular/common/http';
 import { ViewContainerRef } from '@angular/core';
 import {RecapchaService} from '../../recapcha/recapcha.service';
 import {ViewChild} from '@angular/core';
+import { JwtHelper } from 'angular2-jwt';
 import {
   AuthService,
   FacebookLoginProvider,
@@ -15,6 +17,7 @@ import {
 } from 'angular5-social-login';
 import {App_service} from '../../app.service';
 import swal from "sweetalert2";
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -28,6 +31,9 @@ export class SigninComponent implements OnInit {
   public form: FormGroup;
   step: any = [];
   model: any= {};
+  user: any = {};
+  username;
+  pic;
   hide= true;
   currentUser;
   recaptcha= true;
@@ -37,7 +43,7 @@ export class SigninComponent implements OnInit {
   ]);
   passwordFormControl = new FormControl('', [
     Validators.required]);
-  constructor(private fb: FormBuilder, private router: Router, private http: Http, private fB: FacebookService,
+  constructor(private fb: FormBuilder, private router: Router, private http: Http, private http1:HttpClient, private fB: FacebookService,
   public toastr: ToastsManager , vcr: ViewContainerRef,
               private  recacha: RecapchaService,private socialAuthService: AuthService, private service: App_service ) {
 
@@ -60,6 +66,65 @@ export class SigninComponent implements OnInit {
       uname: [null , Validators.compose ( [ Validators.required ] )] , password: [null , Validators.compose ( [ Validators.required ] )]
     } );
   }
+  jwtHelper: JwtHelper = new JwtHelper();
+  socialCallBack= (user) => {
+      this.user = user;
+      console.log(this.user);
+      const headers = { 'Content-Type': 'application/json' };
+      if (user) {
+        const createUser = this.http1.post(Config.api + 'user/social_login_web/', JSON.stringify(
+          {
+            user
+          }), { headers: headers });
+  
+        createUser.subscribe(data => {
+            let user = { 
+             user_id: this.jwtHelper.decodeToken(data['token']).user_id,
+             username: this.jwtHelper.decodeToken(data['token']).username, 
+             token: data['token'] };
+            if (user && user.token) {
+              localStorage.setItem('loged_in', '1');
+              localStorage.setItem('currentUser', JSON.stringify(user));
+              localStorage.setItem('profilePhoto' , this.pic);
+              this.router.navigate(['/profile'+ this.username]);
+              this.showSuccess();
+            }
+          }
+        );
+      }
+    
+
+  }
+
+  showSuccess() {
+    swal({
+      type: 'success',
+      title: 'You have successfully logged in to influexpert.\n' +
+      '\n',
+      showConfirmButton: false,
+      width: '512px',
+      timer: 4000
+    });
+  }
+
+
+  facebooklogin(): void {
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID).then(this.socialCallBack).catch(user => console.log(user));
+
+  }
+
+  googlelogin()
+
+ {
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(this.socialCallBack).catch(message => console.log(message));
+  }
+
+
+
+
+
+
+
   signinFb() {
     this.fB.logout();
     this.fB.login()
@@ -156,6 +221,7 @@ export class SigninComponent implements OnInit {
 
         },
         error => {
+          
 
         });
 
@@ -201,12 +267,23 @@ export class SigninComponent implements OnInit {
         },
         error1 => {
           if(error1.status==400){
-            swal('oops','User does not exits','warning')
+            swal('Unable to log in with provided credentials.')
           }
           else   if(error1.status==500 || error1.status==502){
             swal('Please Wait we are working on it','','warning')
-          }
-        })
+                    }
+            else if (error1.status==403){
+
+              swal('Account not varified yet')
+
+            }      
+                  
+                  
+                  
+                  
+                  })
+         
+        
     }
   }
 

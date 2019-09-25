@@ -10,9 +10,17 @@
         <div class="card-header text-center" data-background-color="rose">
           <h4 class="card-title">
             <label class="font"> Influencer Sign In</label></h4>
-
+            <ul class="form-1-sl">
+                <li>
+                    
+                    <a (click)=" facebooklogin()"> <img src="../../assets/images/facebook.png"> </a>
+                </li>
+                <li>
+                    <a (click)="googlelogin()"> <img src="../../assets/images/icon-Google.png"> </a>
+                </li>
+            </ul>
         </div>
-
+        
         <div class="card-content">
           <mat-form-field class="md-size margin-b-18px">
             <input matInput type="text" placeholder="Username"  tabindex=1 [formControl]="userFormControl"  [(ngModel)]="model.username" required>
