@@ -3,7 +3,9 @@
 
 body{
 
- font-family:  "Roboto", "Helvetica", "Arial", sans-serif;
+ /* font-family:  "Roboto", "Helvetica", "Arial", sans-serif; */
+ font-family: 'Hind Madurai',sans-serif!important;
+ background: #fff
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -26,18 +28,12 @@ body{
 
 
 /*Start From custome */
-.sh-signup-form-fix .mat-input-infix {
-  border-top: 0 solid transparent;
-  padding-bottom: 10px;
-}
-input{
-  padding-top: 10px!important;
+.mat-form-field-infix {
+  border-top: none!important;
+  padding: 5px 0!important;
 }
 .sh-signup-form-fix .mat-input-underline {
   bottom: 18px
-}
-.sh-signup-form-fix .mat-input-wrapper {
-  padding-bottom: 10px
 }
 /*.sh-signup-form-fix .mat-select {*/
 /*  padding-bottom: 10px*/
@@ -82,7 +78,7 @@ input{
   margin: 0!important
 }
 .sh-signup-form-fix .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-placeholder {
-  transform: translateY(-10px) scale(.75) perspective(100px) translateZ(0)!important;
+  transform: translateY(-25px) scale(.75) perspective(100px) translateZ(0)!important;
   -ms-transform: translateY(5px) scale(.75)!important
 }
 .sh-signup-form-fix .mat-form-field-prefix .mat-icon {
@@ -95,34 +91,44 @@ input{
 
 
 .sh-signup-form-fix.mat-focused .mat-form-field-placeholder.mat-form-field-float, .mat-form-field-placeholder.mat-form-field-empty, .mat-form-field-placeholder.mat-form-field-float:not(.mat-form-field-empty) {
-  font-size: 16px !important;
+  font-size: 15px !important;
   font-weight: bold;
   color: grey !important;
+}
+.profile-form  .mat-form-field-label{
+  top: 23px;
+}
+.mat-focused, .mat-focused .mat-form-field-label {
+  color: #000!important;
+ }
+.app ng-sidebar > .sidebar-panel.ng-sidebar{
+  position: absolute!important
 }
 
 .app ng-sidebar > .sidebar-panel.ng-sidebar .menu{
   padding: 68px 0 110px !important;
 }
-.app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-item {
+/* .app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-item {
   border-bottom: 1px solid #CCCCCC!important;
   transition: .5s;
-}
+} */
 .app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-link{
   color: #000000;
-  padding-left: 7px;
+  padding-left: 41px;
   display: flow-root;
+  position: relative;
 
 }
 .app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-link :hover{
   color: white;
 }
-.app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-item:active {
+/* .app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-item:active {
   background: black;
   color: white;
-}
-.app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-item:hover{
+} */
+/* .app ng-sidebar > .sidebar-panel.ng-sidebar .menu .navigation-item:hover{
   border-left: 4px solid #000;
-}
+} */
 .connect-box{
   width: 70%;
   margin: 0 auto;
@@ -141,13 +147,19 @@ input{
   border-radius: 10px;
 }
 .mat-horizontal-stepper-header-container {
-  background: #000;
+  background: #1b3763;
   border-radius: 10px 10px 0 0;
 }
 .mat-step-header .mat-step-label.mat-step-label-active {
   color: #ffffff;
   font-weight: bold;
   font-size: 18px;
+}
+.create-showcase .mat-form-field-label {
+  top: 25px;
+}
+.create-showcase .catagery .mat-form-field-label {
+  top: 36px;
 }
 .mat-step-header .mat-step-icon {
   background-color: #fff;
@@ -162,6 +174,24 @@ input{
 .stepper-style{
   width: 80%;
   margin: 0 auto;
+}
+#myBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  background-color: #6991c5;
+  color: rgb(255, 255, 255);
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  padding: 8px 14px;
+  transition: .3s;
+}
+#myBtn i{
+  display: block;
+  text-align: center;
 }
 .uploaded-pic{
   /*float: left;*/
@@ -191,6 +221,112 @@ input{
   margin-bottom: 10px;
   color: #000;
 }
+.pricing-tenure-switcher{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pts-left{
+  color: black;
+  font-weight: bolder;
+  margin-right: 8px;
+  font-size: 17px;
+}
+.pts-switcher{ 
+  margin-top: 9px;
+}
+pts-right{
+  margin-left: 5px;
+}
+.pricing-price {
+  position: relative;
+  padding: 19px 0;
+  color: #fff;
+  font-weight: bold;
+  font-size: 75px;
+  line-height: 1;
+  margin: 0px 0;
+}
+.price{
+  font-size: 36px;
+}
+.pricing-features li {
+  font-size: 14px;
+  margin: 0;
+  line-height: 28px;
+  font-weight: 600;
+  color: #000;
+  padding: 5px;
+}
+.pricing-features ul {
+  margin: 0;
+  padding: 0px 15px!important;
+  list-style: none;
+  min-height: 140px;
+  text-align: left;
+  min-height: 196px;
+  padding: 8px 16px;
+    margin: 10px 0;
+}
+.paddings-strong{
+    padding-left: 5px;
+}
+.register{
+  margin: 7px auto;
+}
+.pricing-box {
+  position: relative;
+  border-radius: 3px;
+  margin: 10px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #dedede;
+  width: 70%;
+  min-height: 443px;
+  margin: 10px auto;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+.price-unit {
+  line-height: 0px;
+    display: inline-block;
+    vertical-align: baseline;
+    margin: 0px 3px 0 0;
+    font-size: 14px;
+    font-weight: 400
+}
+.price-unit1{
+  line-height: 0px;
+  display: inline-block;
+  vertical-align: baseline;
+  margin: 0px 3px 0 0;
+  font-size: 22px;
+  font-weight: 400
+}
+.fright {
+  float: right!important;
+  color: #1e3d9a;
+  font-size: 14px;
+  font-weight: 600;
+}
+.nopadding {
+  padding: 0!important;
+}
+.pricing-tenure-switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pricing {
+  position: relative;
+  margin-bottom: 2px!important;
+}
+.starter {
+  background: #4e5a69;
+}
+.business, .professional, .professional-2 {
+  background: #638dc3;
+}
+
 /* .swal2-icon{
   width: 3.5em !important;
     height: 3.5em !important;
@@ -220,6 +356,19 @@ input{
   position: absolute;
   right: 0;
   z-index: 2;
+}
+#logo img, img {
+  max-width: 100%;
+}
+.true{
+  color: #01b301;
+      font-size: 13px;
+  font-weight: 600;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  border: 1px solid;
+  padding: 4px;
 }
 .margin-top-10{
   margin-top: 10px;
@@ -331,7 +480,7 @@ input{
 /* Start Setting page */
 .name {
   height: 55px;
-  background-color: #000;
+  background-color: #1b3763;
   color: white;
   padding: 10px;
   text-align: center;
@@ -342,8 +491,95 @@ input{
   background: #fff;
   /*border-radius: 0 0 10px 10px;*/
   /*box-shadow: 0 3px 5px 0 rgba(0,0,0,.5),0 6px 20px 0 rgba(0,0,0,.19)!important;*/
-  box-shadow: 0 0 15px #ccc;
+  /* box-shadow: 0 0 15px #ccc; */
   margin-bottom: 0px !important;
+}
+.title-top-bg {
+  /* background: url(./assets/images/brainwhat.jpg) center center no-repeat; */
+  background-size: cover;
+}
+.how-it-works-wrapper h2 {
+  font-size: 26px;
+  padding: 0;
+  margin: 10px 0;
+  line-height: 50px;
+  font-weight: 600!important;
+  color: #000;
+}
+.how-it-works-wrapper {
+  text-align: center;
+  background: #fff
+}
+.how-it-works-box{
+  transition: .3s ease-out;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.3);
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px 10px;
+    margin-bottom: 20px;
+    min-height: 388px;
+}
+.how-it-works-box:hover {
+  cursor: pointer;
+  box-shadow: 0 5px 25px 0 rgba(64,64,64,.3);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+.feature-matrix-table .fa-times {
+  color: #cd0a0e;
+  font-size: 21px;
+}
+.contact-us-form mat-form-field, .textarea-input {
+  width: 100%;
+  margin-bottom: 27px;
+}
+.btn-primary  {
+  background: #000!important;
+  border-color: #000!important;
+}
+.btn-primary a{
+  color:#fff
+}
+.how-it-works-box h3 {
+  margin: 10px 0 0;
+  line-height: 30px;
+  font-size: 20px;
+  min-height: 60px;
+}
+.about-title {
+  text-align: center;
+  margin: 15px 0;
+}
+.margin-b {
+  margin-bottom: 32px;
+}
+.com-table {
+  overflow-x: scroll;
+  margin-bottom: 15px;
+}
+.com-table table tr th {
+  background-color: #000;
+  color: #fff;
+  padding: 14px 0!important;
+}
+.feature-matrix-table td {
+  padding: 20px 15px!important;
+  font-size: 18px;
+}
+.whats-is-influ img {
+  max-width: 100%;
+  max-height: 100%;
+}
+about-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+.com-table>table {
+  min-width: 1300px;
+  margin-bottom: 0;
+}
+.feature-matrix-table th {
+  text-align: center!important;
 }
 .setting-bar{
   width: 100%;
@@ -353,6 +589,10 @@ input{
 .setting-bar h5{
   display: inline-block;
   margin: 0;
+}
+.feature-matrix-table td {
+  padding: 20px 15px!important;
+  font-size: 18px;
 }
 
 /* End Setting page */
@@ -409,6 +649,10 @@ input{
 }
 .full-width{
   width: 100%;
+}
+.com-table tr>td:first-child {
+  text-align: left;
+  width: 35%;
 }
 /* End Connect Social Page */
 
