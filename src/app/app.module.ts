@@ -12,6 +12,9 @@ import { SidebarModule } from 'ng-sidebar';
 import {CommonModule} from '@angular/common';
 import {BlackgeeksRecaptchaModule} from 'recaptcha-blackgeeks';
 import {SlimLoadingBarModule} from "ng2-slim-loading-bar";
+import { AuthService } from 'ng4-social-login';
+// import { AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider } from 'angular5-social-login';
+import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 
 import {NgTemplateOutlet} from '@angular/common';
 import {OutletContext} from '@angular/router';
@@ -67,6 +70,20 @@ const config= new AuthServiceConfig([
   }
 ], false);
 export function provideConfig() {
+  // const config = new AuthServiceConfig([
+  //   {
+  //     id: GoogleLoginProvider.PROVIDER_ID,
+  //     provider: new GoogleLoginProvider('230320559604-67srei5t0tretdu5hcskccia6df5qatq.apps.googleusercontent.com')
+  //   },
+  //   {
+  //     id: FacebookLoginProvider.PROVIDER_ID,
+  //     provider: new FacebookLoginProvider('2243800905848514')
+  //   }
+
+  // ]);
+  
+  
+  
   return config;
 }
 
@@ -80,7 +97,9 @@ export function provideConfig() {
     ContactComponent,BrandComponent,
     InfluencersComponent,
     HowItWorksComponent,
-    PrivacyAndPolicyComponent,
+    PrivacyAndPolicyComponent, 
+   
+   
     PrivacyComponent,
     TermsAndConditionsComponent,
     TermsComponent,
@@ -90,7 +109,7 @@ export function provideConfig() {
     // PostSignupComponent
   ],
   imports: [
-
+    JwSocialButtonsModule,
     BrowserModule,
     MatSlideToggleModule,
     BlackgeeksRecaptchaModule,
@@ -135,6 +154,7 @@ export function provideConfig() {
 
 
   providers: [
+    AuthService,
     {provide: AuthServiceConfig,  useFactory: provideConfig},
     AuthGuard, App_service],
   bootstrap: [AppComponent]

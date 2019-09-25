@@ -7,9 +7,13 @@ export class Config {
     // public static api: String = 'http://localhost:8000';
     public static api: String = 'http://192.168.29.166:8000';
     // public static api: String = 'http://127.0.0.1:8000';
-  // public static api: String = 'http://192.168.29.108:8000';
+  public static api: String = 'http://192.168.29.166:8000';
   // public static api: String = 'https://apis.influexpai.com';
   // public static api: String = 'https://apis.influexpai.com';
+<<<<<<< HEAD
+  // public static api: String = 'https://apis.influexpai.com';
+=======
+>>>>>>> dfb85a837498dc598e7b57fc9314fcffdbc4b625
 
 
   // public static api: String = 'https://192www.influexp.com';
