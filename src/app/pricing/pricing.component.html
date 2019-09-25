@@ -32,10 +32,10 @@
                 </div>
               </div>
               <div *ngIf="exists" class="alert alert-danger">
-                <span>Email already exists.</span>
+                <strong>Email already exists.</strong>
               </div>
               <div class="style-msg successmsg" *ngIf="emailchk && !exists">
-                <div class="sb-msg"><i class="icon-ok"></i><span>Email is not registered.</span> You can continue.</div>
+                <div class="sb-msg"><i class="icon-ok"></i><strong>Email is not registered.</strong> You can continue.</div>
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
               </div>
             </div>
@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-lg btn-primary register"  type="button"  data-dismiss="modal" (click)="closeModal()">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="closeModal()">Close</button>
       </div>
     </div>
   </div>
@@ -80,78 +80,77 @@
       <span class="pts-right" *ngIf="!isright">Yearly</span>
         <span class="pts-right" *ngIf="isright" style="color: black; font-weight: bolder; font-size: 17px">Yearly</span>
     </div>
-    <div id="pricing-switch" class="pricing bottommargin-lg row">
-        <div class="col-md-2 col-sm-6"></div>
-
+    <div id="pricing-switch" class="pricing bottommargin-lg">
       <div class="col-md-4 col-sm-6" *ngIf="!isright">
         <div class="pricing-box">
-            <!-- <button data-toggle="modal" data-target="#myModal" data-pricing-plan="Starter Plan"
+            <button data-toggle="modal" data-target="#myModal" data-pricing-plan="Starter Plan"
             (click)="pricingpackage('free')"
             class="button button-large button-rounded capitalize ls0" style="border-radius: 23px;">
             Register Now
-          </button> -->
-        
+          </button>
+          <div class="pricing-title">
+            <h3>Flex</h3>
+          </div>
           <div class="pricing-price starter">
-              <div class="pricing-title">
-                  <h3>Flex</h3>
-                </div>
-            <div class="pts-switch-content-left"><span class="price-unit1">$</span><span class="price">34.99</span><span
-              class="price-unit">Monthly</span>
+            <div class="pts-switch-content-left"><span class="price-unit">$</span>35<span
+              class="price-tenure">Monthly</span>
             </div>
           </div>
           <!--<div class="pricing-price">-->
-          <!--FREE<span class="price-unit">Limited Access</span>-->
+          <!--FREE<span class="price-tenure">Limited Access</span>-->
           <!--</div>-->
           <div class="pricing-features">
             <ul>
-                <li><i class="fa fa-check true"></i> <span class="paddings-strong">Unlimited</span> Searches</li>
-                <li><i class="fa fa-check true"></i><span class="paddings-strong"> Store up to 2000 Contacts</span></li>
-                <li><i class="fa fa-check true"></i><span class="paddings-strong"> Send up to 1,000,000 emails</span></li>
-                <li><i class="fa fa-check true"></i><span class="paddings-strong"> 1 Seat</span></li>
-                <li><i class="fa fa-check true"></i> <span class="paddings-strong">1 Month License</span></li>
-                <li><i class="fa fa-check true"></i><span class="paddings-strong"> Email Support</span></li>
+              <!-- <li><i class="fa fa-check"></i> <strong>5,000</strong> Searches</li>
+              <li><i class="fa fa-check"></i> Store up to 500 Contacts</li>
+              <li><i class="fa fa-check"></i> Send up to 100 emails</li> -->
+              <li><i class="fa fa-check"></i> <strong>5,000</strong> Searches</li>
+              <li><i class="fa fa-check"></i> Store up to 2000 Contacts</li>
+              <li><i class="fa fa-check"></i> Send up to 1,000,000 emails</li>
+              <li><i class="fa fa-check"></i> 1 Seat</li>
+              <li><i class="fa fa-check"></i> 1 Email</li>
             </ul>
-            <button class="btn btn-lg btn-primary register"  data-toggle="modal" data-target="#myModal" data-pricing-plan="Starter Plan"
+            <button data-toggle="modal" data-target="#myModal" data-pricing-plan="Starter Plan"
                     (click)="pricingpackage('free')"
-                     >
+                    class="button button-large button-rounded capitalize ls0" style="border-radius: 23px;">
                     Register Now
             </button>
           </div>
          
         </div>
       </div>
+      <div class="col-md-2 col-sm-6" *ngIf="isright"></div>
       <!--pro pack yearly start-->
       <!---->
       <div class="col-md-4 col-sm-6" *ngIf="isright">
         <div class="pricing-box">
-            <!-- <button data-toggle="modal" data-target="#myModal"
+            <button data-toggle="modal" data-target="#myModal"
             data-pricing-plan="Professional Yearly Plan"
             (click)="pricingpackage(propacky.value)"
             class="button button-large button-rounded capitalize ls0"
             style="border-radius: 23px;"> Register Now
-          </button> -->
-         
-          <div class="pricing-price starter">
-              <div class="pricing-title">
-                  <h3>Flex</h3>
-                </div>
-            <div><span class="price-unit1">$</span><span class="price">299.99</span><span class="price-unit">Yearly</span></div>
+          </button>
+          <div class="pricing-title">
+            <h3>Professional</h3>
+          </div>
+          <div class="pricing-price professional">
+            <div><span class="price-unit">$</span>799<span class="price-tenure">Yearly</span></div>
           </div>
           <div class="pricing-features">
             <input type="hidden" value="pro monthly" #propackm>
             <input type="hidden" value="pro yearly" #propacky>
             <ul>
-                <li><i class="fa fa-check true"></i> <span class="paddings-strong">Unlimited</span> Searches</li>
-                <li><i class="fa fa-check true"></i><span class="paddings-strong"> Store up to 8000  Contacts</span></li>
-                <li><i class="fa fa-check true"></i> <span class="paddings-strong">Send up to 1,000,000 emails</span></li>
-                <li><i class="fa fa-check true"></i><span class="paddings-strong"> 3 Seat</span></li>
-                <li><i class="fa fa-check true"></i> <span class="paddings-strong">1 Month</span> License</li>
-                <li><i class="fa fa-check true"></i><span class="paddings-strong">Email Support</span> </li>
+              <li><i class="fa fa-check"></i> <strong>50,000</strong> Searches</li>
+              <li><i class="fa fa-check"></i> Store up to 5000 Contacts</li>
+              <li><i class="fa fa-check"></i> Unlimited Emailing</li>
+              <li><i class="fa fa-check"></i> <strong>1 Year</strong> License</li>
+              <li><i class="fa fa-check"></i> Email Support</li>
             </ul>
-            <button class="btn btn-lg btn-primary register"  data-toggle="modal" data-target="#myModal"
+            <button data-toggle="modal" data-target="#myModal"
             data-pricing-plan="Professional Yearly Plan"
             (click)="pricingpackage(propacky.value)"
-          > Register Now
+            class="button button-large button-rounded capitalize ls0"
+            style="border-radius: 23px;"> Register Now
             </button>
           </div>
           
@@ -163,39 +162,44 @@
       <!---->
       <div class="col-md-4 col-sm-6" *ngIf="!isright">
         <div class="pricing-box" *ngIf="!isright">
-            <!-- <button data-toggle="modal" data-target="#myModal"
+            <button data-toggle="modal" data-target="#myModal"
                       data-pricing-plan="Professional Monthly Plan"
                       (click)="pricingpackage(propackm.value)"
                       class="button button-large button-rounded capitalize ls0"
                       style="border-radius: 23px;">Register Now
-              </button> -->
-         
+              </button>
+          <div class="pricing-title">
+            <h3>Pro</h3>
+          </div>
           <div class="">
-              
-            <div class="pts-switch-content-left pricing-price professional">
-                <div class="pricing-title">
-                    <h3>Pro</h3>
-                  </div>
-              
-              <span class="price-unit1">$</span><span class="price">299.99</span><span
-              class="price-unit">Monthly</span>
+            <div class="pts-switch-content-left pricing-price professional"><span class="price-unit">$</span>299<span
+              class="price-tenure">Monthly</span>
             </div>
             <div class="pricing-features">
               <input type="hidden" value="pro monthly" #propackm>
               <input type="hidden" value="pro yearly" #propacky>
               <ul>
-                      
-                  <li><i class="fa fa-check true"></i> <span class="paddings-strong">Unlimited</span> Searches</li>
-                  <li><i class="fa fa-check true"></i><span class="paddings-strong"> Store up to 8000  Contacts</span></li>
-                  <li><i class="fa fa-check true"></i><span class="paddings-strong">Send up to 1,000,000 emails</span> </li>
-                  <li><i class="fa fa-check true"></i><span class="paddings-strong"> 1 Seat</span></li>
-                  <li><i class="fa fa-check true"></i> <span class="paddings-strong">1 Year</span> License</li>
-                  <li><i class="fa fa-check true"></i><span class="paddings-strong"> Email Support</span></li>
+                  <li>
+                      <i class="fa fa-check"></i>
+                    <strong>10,000</strong> Searches</li>
+                  <li><i class="fa fa-check"></i> Store up to 4000 Contacts</li>
+                  <li><i class="fa fa-check"></i> Unlimited Emailing</li>
+                  <li><i class="fa fa-check"></i> <strong>1 Month</strong> License</li>
+                  <li><i class="fa fa-check"></i> Email Support</li>
+                  <li><i class="fa fa-check"></i> 3 Seats</li>
+                  <li><i class="fa fa-check"></i> 4 Emails</li>
+<!-- 
+                <li><i class="fa fa-check"></i> <strong>10,000</strong> Searches</li>
+                <li><i class="fa fa-check"></i> Store up to 1000 Contacts</li>
+                <li><i class="fa fa-check"></i> Unlimited Emailing</li>
+                <li><i class="fa fa-check"></i> <strong>1 Month</strong> License</li>
+                <li><i class="fa fa-check"></i> Email Support</li> -->
               </ul>
-              <button class="btn btn-lg btn-primary register" data-toggle="modal" data-target="#myModal"
+              <button data-toggle="modal" data-target="#myModal"
                       data-pricing-plan="Professional Monthly Plan"
                       (click)="pricingpackage(propackm.value)"
-                     >Register Now
+                      class="button button-large button-rounded capitalize ls0"
+                      style="border-radius: 23px;">Register Now
               </button>
             </div>
             
@@ -205,34 +209,65 @@
       <!---->
       <!--pro pack monthly end-->
       <!--Business pack monthly start-->
+      <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3" *ngIf="!isright">
+        <div class="pricing-box">
+            <button data-toggle="modal" data-target="#myModal" data-pricing-plan="Business Monthly Plan"
+            (click)="pricingpackage(bpackm.value)"
+            class="button button-large button-rounded capitalize ls0" style="border-radius: 23px;">
+            Register Now
+    </button>
+          <div class="pricing-title">
+            <h3>Business</h3>
+          </div>
+          <div class="pricing-price business">
+            <div class="pts-switch-content-left"><span class="price-unit">$</span>119<span
+              class="price-tenure">Monthly</span></div>
+          </div>
+          <div class="pricing-features">
+            <ul>
+              <li><i class="fa fa-check"></i> <strong>20,000</strong> Searches</li>
+              <li><i class="fa fa-check"></i> Store up to 2500 Contacts</li>
+              <li><i class="fa fa-check"></i> Unlimited Emailing</li>
+              <li><i class="fa fa-check"></i> <strong>1 Month</strong> License</li>
+              <li><i class="fa fa-check"></i> Email Support</li>
+            </ul>
+            <button data-toggle="modal" data-target="#myModal" data-pricing-plan="Business Monthly Plan"
+                    (click)="pricingpackage(bpackm.value)"
+                    class="button button-large button-rounded capitalize ls0" style="border-radius: 23px;">
+                    Register Now
+            </button>
+          </div>
+          <input type="hidden" value="bui monthly" #bpackm>
+          <input type="hidden" value="bui yearly" #bpacky>
+          
+        </div>
+      </div>
       <!--Business pack monthly end-->
       <!--Business pack yearly start-->
       <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3" *ngIf="isright">
         <div class="pricing-box">
-            <!-- <button data-toggle="modal" data-target="#myModal" data-pricing-plan="Business Yearly Plan"
+            <button data-toggle="modal" data-target="#myModal" data-pricing-plan="Business Yearly Plan"
             (click)="pricingpackage(bpacky.value)"
             class="button button-large button-rounded capitalize ls0" style="border-radius: 23px;">
             Register Now
-    </button> -->
-         
+    </button>
+          <div class="pricing-title">
+            <h3>Business</h3>
+          </div>
           <div class="pricing-price business">
-              <div class="pricing-title">
-                  <h3>Pro</h3>
-                </div>
-            <div><span class="price-unit1">$</span><span class="price">999.99</span><span class="price-unit">Yearly</span></div>
+            <div><span class="price-unit">$</span>1399<span class="price-tenure">Yearly</span></div>
           </div>
           <div class="pricing-features">
             <ul>
-                <li><i class="fa fa-check true"></i> <span class="paddings-strong">Unlimited</span> Searches</li>
-                <li><i class="fa fa-check true"></i><span class="paddings-strong">  Store up to 8000  Contacts</span></li>
-                <li><i class="fa fa-check true"></i><span class="paddings-strong"> Send up to 1,000,000 emails </span> </li>
-                <li><i class="fa fa-check true"></i><span class="paddings-strong">  3 Seat</span></li>
-                <li><i class="fa fa-check true"></i> <span>1 Year</span> License</li>
-                <li><i class="fa fa-check true"></i><span class="paddings-strong"> Email Support</span></li>
+              <li><strong>100,000</strong> Searches</li>
+              <li>Store up to 15,000 Contacts</li>
+              <li>Unlimited Emailing</li>
+              <li><strong>1 Year</strong> License</li>
+              <li>Email Support</li>
             </ul>
-            <button class="btn btn-lg btn-primary register" data-toggle="modal" data-target="#myModal" data-pricing-plan="Business Yearly Plan"
+            <button data-toggle="modal" data-target="#myModal" data-pricing-plan="Business Yearly Plan"
                     (click)="pricingpackage(bpacky.value)"
-            >
+                    class="button button-large button-rounded capitalize ls0" style="border-radius: 23px;">
                     Register Now
             </button>
           </div>
@@ -271,7 +306,7 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td><span>Average Pricing / Year</span></td>
+                    <td><strong>Average Pricing / Year</strong></td>
                     <td>$ 1499.99</td>
                     <td>$ 8388</td>
                     <td>$ 7188</td>
@@ -281,39 +316,19 @@
                     <td>$ 5988</td>
                 </tr>
                 <tr>
-                    <td><span>Influencer Matching Artificial Intelligence (AI)</span></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>Influencer Matching Artificial Intelligence (AI)</strong></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Social Media Classification based on ML/AI</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                 </tr>
                 <tr>
-                    <td><span>Request For Marketing: Publish Bids</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Influencer Review and Custom Scroes</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
+                    <td><strong>Social Media Classification based on ML/AI</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
@@ -321,108 +336,18 @@
                     <td><i class="fa fa-times"></i></td>
                 </tr>
                 <tr>
-                    <td><span>CRM</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Actionable Analytics</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Email directly from Platform</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>Request For Marketing: Publish Bids</strong></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Deep Influencer Insight</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Campaign Scheduling</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                 </tr>
                 <tr>
-                    <td><span>Daily Email Influencer Alerts & Notifications</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Campaign Monitoring</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Content Creation & Review</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Social Monitoring</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Account Management & Automation</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Realtime Influencer Chat</span></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>Influencer Review and Custom Scroes</strong></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
@@ -431,118 +356,108 @@
                     <td><i class="fa fa-times"></i></td>
                 </tr>
                 <tr>
-                    <td><span>Vetted Opt-In Influencers</span></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>CRM</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                 </tr>
                 <tr>
-                    <td><span>Bloggers</span></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>Actionable Analytics</strong></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Twitter Influencers</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Instagram Influencers</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                 </tr>
                 <tr>
-                    <td><span>Facebook Influencers</span></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>Email directly from Platform</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Deep Influencer Insight</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                 </tr>
                 <tr>
-                    <td><span>Snapchat Influencers</span></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>Campaign Scheduling</strong></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Youtube Influencers</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                </tr>
-                <tr>
-                    <td><span>Pinterest Influencers</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                 </tr>
                 <tr>
-                    <td><span>LinkedIn Influencers</span></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>Daily Email Influencer Alerts & Notifications</strong></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Campaign Monitoring</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Content Creation & Review</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                 </tr>
                 <tr>
-                    <td><span>Search Engine</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>Social Monitoring</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                 </tr>
                 <tr>
-                    <td><span>Android Mobile App</span></td>
-                    <td><i class="fa fa-check true"></i></td>
-                    <td><i class="fa fa-times"></i></td>
-                    <td><i class="fa fa-times"></i></td>
+                    <td><strong>Account Management & Automation</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                 </tr>
                 <tr>
-                    <td><span>iOS Mobile App</span></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>Realtime Influencer Chat</strong></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
@@ -551,8 +466,18 @@
                     <td><i class="fa fa-times"></i></td>
                 </tr>
                 <tr>
-                    <td><span>Electronic Bid Submission</span></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>Vetted Opt-In Influencers</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Bloggers</strong></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
@@ -561,8 +486,58 @@
                     <td><i class="fa fa-times"></i></td>
                 </tr>
                 <tr>
-                    <td><span>Winning Bidder Insight</span></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>Twitter Influencers</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Instagram Influencers</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Facebook Influencers</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Snapchat Influencers</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Youtube Influencers</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Pinterest Influencers</strong></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
@@ -571,8 +546,68 @@
                     <td><i class="fa fa-times"></i></td>
                 </tr>
                 <tr>
-                    <td><span>Technical Support Chat</span></td>
-                    <td><i class="fa fa-check true"></i></td>
+                    <td><strong>LinkedIn Influencers</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Search Engine</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Android Mobile App</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>iOS Mobile App</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Electronic Bid Submission</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Winning Bidder Insight</strong></td>
+                    <td><i class="fa fa-check"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                    <td><i class="fa fa-times"></i></td>
+                </tr>
+                <tr>
+                    <td><strong>Technical Support Chat</strong></td>
+                    <td><i class="fa fa-check"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
                     <td><i class="fa fa-times"></i></td>
