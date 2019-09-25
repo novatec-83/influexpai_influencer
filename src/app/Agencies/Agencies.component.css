@@ -41,9 +41,6 @@
 .para-button{
     margin: 8px;
 }
-.para-button a{
-    color:#fff
-}
 .nav-tabs > li.active > a {
     color: #c00!important;
     border: 1px solid #f2f5f7!important;
