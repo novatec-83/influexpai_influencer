@@ -5,15 +5,12 @@ export class Config {
     // public static api: String = 'https://influexpapi.herokuapp.com';
     // public static api: String = 'http://ns520442.ip-158-69-23.net:4433';
     // public static api: String = 'http://localhost:8000';
-    public static api: String = 'http://192.168.29.166:8000';
+    // public static api: String = 'http://192.168.29.166:8000';
     // public static api: String = 'http://127.0.0.1:8000';
   public static api: String = 'http://192.168.29.166:8000';
   // public static api: String = 'https://apis.influexpai.com';
   // public static api: String = 'https://apis.influexpai.com';
-<<<<<<< HEAD
   // public static api: String = 'https://apis.influexpai.com';
-=======
->>>>>>> dfb85a837498dc598e7b57fc9314fcffdbc4b625
 
 
   // public static api: String = 'https://192www.influexp.com';
