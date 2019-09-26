@@ -149,11 +149,11 @@ padding: 10px;
 //   font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
 // }
 .btn-rounded{
-  background: #1b3763;
+  background: #000;
   color: #fff;
   text-align: center;
   margin-top: 1%;
-  // border-color: #000;
+  border-color: #000;
   border-radius: 20px;
   font-weight: 600;
   font-size: 17px;
@@ -164,10 +164,10 @@ padding: 10px;
 
 .btn-rounded:hover{ 
   
-  background-color: #1b3763!important;
+  background-color: #cc0000!important;
   border: none;
   transition: 1s;
- 
+  box-shadow: 2px 2px 5px 3px #ad1919!important;
 }
 
 

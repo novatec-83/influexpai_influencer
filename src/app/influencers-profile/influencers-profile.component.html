@@ -35,6 +35,25 @@
             </mat-form-field>
           </div>
         </div>
+
+
+        <div class="row">
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <mat-form-field class="example-full-width" >
+                  <input type="text" matInput placeholder="First Name" [(ngModel)]="userdata[0]['first_name']" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+              </div>
+
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                  <mat-form-field class="example-full-width" >
+                    <input type="text" matInput placeholder="Last Name" [(ngModel)]="userdata[0]['last_name']" [ngModelOptions]="{standalone: true}">
+                  </mat-form-field>
+                </div>
+        </div>
+
+
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-12">
             <mat-form-field class="example-full-width" >
@@ -46,8 +65,7 @@
           <!-- <div class="col-lg-6 col-md-6 col-sm-12">
             <mat-form-field class="example-full-width" >
             <mat-select placeholder="Employement Status" [(ngModel)]="userdata[0]['employment_status']"  [ngModelOptions]="{standalone: true}">
-
-                <mat-option *ngFor="let edu of EMS" [value]="edu.code" >{{edu.show}}</mat-option>
+            <mat-option *ngFor="let edu of EMS" [value]="edu.code" >{{edu.show}}</mat-option>
 
             </mat-select>
             </mat-form-field>
@@ -58,8 +76,6 @@
              &lt;!&ndash;<mat-option *ngFor="let edu of EMS" value="edu.code" >{{edu.show}}</mat-option>&ndash;&gt;
            </mat-form-field>
             </mat-select>
-
-
           </div> -->
       </div>
         <div class="row">
@@ -74,11 +90,10 @@
             <mat-form-field class="example-full-width" >
               <input type="text" matInput placeholder="City" [(ngModel)]="userdata[0]['city']" [ngModelOptions]="{standalone: true}" >
               <!--<mat-option *ngFor="let edu of EMS" value="edu.code" >{{edu.show}}</mat-option>-->
+
             </mat-form-field>
           </div>
         </div>
-
-
 
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-12">
@@ -87,6 +102,14 @@
               <!--<mat-option *ngFor="let edu of EMS" value="edu.code" >{{edu.show}}</mat-option>-->
             </mat-form-field>
           </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-12">
+              <mat-form-field class="example-full-width">
+                <input type="text" matInput placeholder="Address" [(ngModel)]="userdata[0]['address']" [ngModelOptions]="{standalone: true}" >
+                <!--<mat-option *ngFor="let edu of EMS" value="edu.code" >{{edu.show}}</mat-option>-->
+              </mat-form-field>
+            </div>
+
 
           <!-- <div class="col-lg-6 col-md-6 col-sm-12">
                         <mat-form-field class="example-full-width" >
@@ -101,12 +124,17 @@
           </div> -->
         </div>
         <div class="row">
-          <!-- <div class="col-lg-6 col-md-6 col-sm-12"> -->
-<!--            <mat-form-field class="example-full-width" >-->
-<!--              <input type="text" matInput placeholder="Education" [(ngModel)]="userdata[0]['education']" [ngModelOptions]="{standalone: true}" >-->
-<!--              &lt;!&ndash;<mat-option *ngFor="let edu of EMS" value="edu.code" >{{edu.show}}</mat-option>&ndash;&gt;-->
-<!--            </mat-form-field>-->
-            <!-- <mat-form-field class="example-full-width" >
+
+          <!-- <div class="col-lg-6 col-md-6 col-sm-12">
+
+
+           NptIncluee<mat-form-field class="example-full-width" >
+             <input type="text" matInput placeholder="Education" [(ngModel)]="userdata[0]['education']" [ngModelOptions]="{standalone: true}" >
+             &lt;!&ndash;<mat-option *ngFor="let edu of EMS" value="edu.code" >{{edu.show}}</mat-option>&ndash;&gt;
+           </mat-form-field>NptIncluee
+
+
+            <mat-form-field class="example-full-width" >
             <mat-select placeholder="Education " [(ngModel)]="userdata[0]['education']" [ngModelOptions]="{standalone: true}" style="padding-top: 0!important; text-align:initial; width: 100%">
               <mat-option *ngFor="let rel of EDUCATIONS"  [value]="rel.code" >{{rel.show}}</mat-option>
             </mat-select>
@@ -126,11 +154,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12">
+          <!-- <div class="col-lg-6 col-md-6 col-sm-12">
             <mat-form-field class="example-full-width" >
               <input type="text" matInput placeholder="Address">
             </mat-form-field>
-          </div>
+          </div> -->
             <div class="col-lg-6 col-md-6 col-sm-12 text-right">
               <button type="submit" (click)="editProfile()" class="btn btn-rounded">
                 Update
@@ -146,7 +174,7 @@
 
 
 
-  <!--<div class="row pt-3 pb-3" style="background-color: white">-->
+  <!-- <div class="row pt-3 pb-3" style="background-color: white">-->
     <!--<div class="col-lg-4 text-center">-->
       <!--<img mat-card-image src="{{currentUser.image_url}}" style="width: auto;height: auto" alt="Image">-->
     <!--</div>-->
@@ -176,7 +204,7 @@
     <!--<br>-->
 
 
-  <!--</div>-->
+  <!--</div> -->
 
 
   <br>

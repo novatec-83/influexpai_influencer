@@ -1,5 +1,5 @@
 .card {
-    width: 162px;
+    width: 190px;
     padding: 10px !important;
     // background: #f2f2f2;
     .mat-form-field {
@@ -14,13 +14,13 @@
     }
     button {
         background: #000;
-    border: none;
-    color: #fff;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    float: right;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+        width: 18%;
+        height: 45px;
+        padding: 0;
+        float: right;
         .mat-icon {
             color: white
         }
@@ -37,7 +37,7 @@ input[_ngcontent-c4] {
     border: none;
     border-bottom: 1px solid;
     font: inherit;
-    font-size: 16px;
+    font-size: 20px;
     text-align: center;
 }
 .main img {
@@ -58,9 +58,4 @@ input[_ngcontent-c4] {
     font-size: inherit;
     width:90%
 }
-.recapcha-img{
-    height: 15px;
-    position: absolute;
-    top: 8px;
-    right: 2px;
-}
+

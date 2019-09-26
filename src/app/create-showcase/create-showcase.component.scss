@@ -230,13 +230,13 @@ mat-step {
   border-radius: 5px;
 }
 
-// .upload-image:hover{
+.upload-image:hover{
 
-//   background-color: #cc0000!important;
-//   transition: 1s;
-//   border: none!important;
-//   box-shadow: 0 3px 5px 0 #cc0000(0, 0, 0, 0.5), 0 3px 15px 0 #cc0000(0, 0, 0, 0.19) !important;  padding: 10px;
-// }
+  background-color: #cc0000!important;
+  transition: 1s;
+  border: none!important;
+  box-shadow: 0 3px 5px 0 #cc0000(0, 0, 0, 0.5), 0 3px 15px 0 #cc0000(0, 0, 0, 0.19) !important;  padding: 10px;
+}
 .next-btn{
   //bottom: 4px;
   font-weight: bold;
@@ -252,7 +252,7 @@ mat-step {
 }
 
 .next-btn:hover{
-  background-color: #1b3763 !important;
+  background-color: #cc0000!important;
   border: none;
   transition: 1s;
 }
@@ -273,7 +273,7 @@ mat-step {
 
 
 .back-button:hover{
-  background-color: #1b3763!important;
+  background-color: #cc0000!important;
   color: white!important;
   border: none;
   transition: 1s;
@@ -290,11 +290,7 @@ mat-step {
 }
 label{
   font-weight: bold;
-  font-size: 14px;
-
-}
-.imagename{
-  margin-left: 12%;
+  font-size: 19px;
 }
 .mat-horizontal-stepper-header{
   pointer-events: none;
