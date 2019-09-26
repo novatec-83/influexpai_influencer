@@ -23,35 +23,14 @@
             </mat-error>
           </mat-form-field>
         </div>
-
-
-        <!-- <div class="col-md-4">
+        <div class="col-md-4">
           <mat-form-field class="example-full-width">
             <input type="text" matInput  name="full" placeholder=" Full Name" formControlName="fullName"  [(ngModel)]="model.name"required>
             <mat-error *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
               <span *ngIf="f.fullName.errors.required">Name is required</span>
             </mat-error>
           </mat-form-field>
-        </div> -->
-
-        <div class="col-md-4">
-          <mat-form-field class="example-full-width">
-            <input type="text" matInput  name="firstname" placeholder=" First Name" formControlName="firstName"  [(ngModel)]="model.first_name"required>
-            <mat-error *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-              <span *ngIf="f.firstName.errors.required">First name is required</span>
-            </mat-error>
-          </mat-form-field>
         </div>
-
-        <div class="col-md-4">
-          <mat-form-field class="form-group" id="mat-filed">
-            <input  type="text" matInput name="lastname" formControlName="lastName"  placeholder="Last name"  [(ngModel)]="model.last_name"   required>
-            <mat-error *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-              <span *ngIf="f.lastName.errors.required">Last name is required</span>
-            </mat-error>
-          </mat-form-field>
-        </div>
-
         <div class="col-md-4">
           <mat-form-field>
             <input type="text" matInput placeholder="Email" formControlName="eMail" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  [(ngModel)]="model.email"  required>
@@ -108,17 +87,6 @@
             <div class="col-md-6">
 
               <mat-form-field  style="margin-top: 10px">
-                <input type="text" matInput id="pho" formControlName="aDdress" placeholder=" Address" name="address"   [(ngModel)]="model.address"  required>
-                <mat-error *ngIf="submitted && f.aDdress.errors" class="invalid-feedback">
-                  <span *ngIf="f.aDdress.errors.required">Phone is required</span>
-                </mat-error>
-              </mat-form-field>
-         </div>
-
-
-            <div class="col-md-6">
-
-              <mat-form-field  style="margin-top: 10px">
                 <input type="text" matInput id="pho" formControlName="phoNe" placeholder=" Phone" name="pass"   [(ngModel)]="model.phone"  required>
                 <mat-error *ngIf="submitted && f.phoNe.errors" class="invalid-feedback">
                   <span *ngIf="f.phoNe.errors.required">Phone is required</span>
@@ -126,13 +94,8 @@
               </mat-form-field>
          </div>
 
-<<<<<<< HEAD
-         <!-- <div class="col-md-6">
-           <mat-form-field class="example-full-width">
-=======
          <div class="col-md-6">
            <mat-form-field class="example-full-width catagery ">
->>>>>>> dfb85a837498dc598e7b57fc9314fcffdbc4b625
            <mat-select style="color: #000" name="relationship" formControlName="eduCation" [(ngModel)]="model.education" placeholder="Select Education">
              <mat-option *ngFor="let edu of EDUCATIONS" [value]="edu.code">{{ edu.show }}</mat-option>
            </mat-select>
@@ -140,7 +103,7 @@
                <span *ngIf="f.eduCation.errors.required">Education is required</span>
              </mat-error>
            </mat-form-field>
-     </div> -->
+     </div>
 
      <div class="col-md-6 ">
        <mat-form-field class="example-full-width catagery ">

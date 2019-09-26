@@ -88,7 +88,6 @@ form input[type=text] {
     width: 100%;
     display: block;
     height: auto;
-    margin-top: 12px;
 }
 
 .footer-copyright a {
@@ -228,7 +227,7 @@ button#btn-chat {
 }
 
 .footer-upper {
-    padding: 10px 50px;
+    padding: 18px 50px;
     background: #000;
     min-height: 402px;
     float: left;

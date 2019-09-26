@@ -27,8 +27,7 @@ export class InfluencersProfileComponent implements OnInit {
   name: string;
   NE;
   username;
-  phone;first_name;last_name;
-  city;state;country;
+  phone;
   currentUser: any;
   userdata: any =[];
   userdata1: any = {};
@@ -99,24 +98,13 @@ export class InfluencersProfileComponent implements OnInit {
 
   }
   editProfile(){
-    let headers = new Headers();
-    // headers.append('Content-Type', 'application/json');
-    headers.append('Content-Type', 'application/json');
-
-     this.Http.put(Config.api + '/influencer_profile_update/'+this.currentUser.username, JSON.stringify({
-      // relationship: this.userdata[0]['relationship'],
-      // education: this.userdata[0]['education'],
-      first_name: this.userdata[0]['first_name'],
-      last_name: this.userdata[0]['last_name'],
+    this.Http.put(Config.api + '/influencer_profile_update/'+this.currentUser.username, JSON.stringify({
+      relationship: this.userdata[0]['relationship'],
+      education: this.userdata[0]['education'],
       phone: this.userdata[0]['phone'],
-      city: this.userdata[0]['city'],
-      state: this.userdata[0]['state'],
-      country: this.userdata[0]['country'],
-      address: this.userdata[0]['address'],
-      // city: this.userdata[0]['city'],
-      gender: this.userdata[0]['gender']
-      // employment_status: this.userdata[0]['employment_status']
-      }),{headers:headers}).map((response: Response) => response.json()).subscribe(
+      gender: this.userdata[0]['gender'],
+      employment_status: this.userdata[0]['employment_status']
+      })).map((response: Response) => response.json()).subscribe(
       data => {
         this.toastr.success('Profile Updated');
 
