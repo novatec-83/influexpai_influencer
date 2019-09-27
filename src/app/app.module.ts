@@ -21,7 +21,7 @@ import {OutletContext} from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import {AgenciesComponent} from './Agencies/Agencies.component';
 import { BrandComponent } from './brand/brand.component';
-
+import { MyshowcaseComponent } from './myshowcase/myshowcase.component';
 import {PricingComponent} from './pricing/pricing.component';
 import {
   BlogComponent,
@@ -55,6 +55,7 @@ import { SigninComponent } from './authentication/signin/signin.component';
 import { InfluencersComponent } from './influencers/influencers.component';
 import { RecapchaModule } from './recapcha/recapcha.module';
 import { TextMaskModule } from 'angular2-text-mask';
+import { from } from 'rxjs/observable/from';
 const config= new AuthServiceConfig([
   {
     id: LinkedinLoginProvider.PROVIDER_ID,
@@ -103,7 +104,8 @@ export function provideConfig() {
     PrivacyComponent,
     TermsAndConditionsComponent,
     TermsComponent,
-    WhatIsInfluexpaiComponent
+    WhatIsInfluexpaiComponent,
+    MyshowcaseComponent
             // AccountSettingComponent,
 // SigninComponent
     // PostSignupComponent
