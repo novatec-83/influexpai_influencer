@@ -23,11 +23,27 @@
             </mat-error>
           </mat-form-field>
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
           <mat-form-field class="example-full-width">
             <input type="text" matInput  name="full" placeholder=" Full Name" formControlName="fullName"  [(ngModel)]="model.name"required>
             <mat-error *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
               <span *ngIf="f.fullName.errors.required">Name is required</span>
+            </mat-error>
+          </mat-form-field>
+        </div> -->
+        <div class="col-md-4">
+          <mat-form-field class="example-full-width">
+            <input type="text" matInput  name="firstname" placeholder=" First Name" formControlName="firstName"  [(ngModel)]="model.first_name"required>
+            <mat-error *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+              <span *ngIf="f.fullName.errors.required">First Name is required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field class="example-full-width">
+            <input type="text" matInput  name="lastname" placeholder=" Last Name" formControlName="lastName"  [(ngModel)]="model.last_name"required>
+            <mat-error *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+              <span *ngIf="f.fullName.errors.required">Lsst Name is required</span>
             </mat-error>
           </mat-form-field>
         </div>

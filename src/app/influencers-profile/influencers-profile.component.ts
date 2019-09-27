@@ -27,7 +27,7 @@ export class InfluencersProfileComponent implements OnInit {
   name: string;
   NE;
   username;
-  phone;
+  phone;first_name;last_name;
   currentUser: any;
   userdata: any =[];
   userdata1: any = {};
@@ -100,6 +100,8 @@ export class InfluencersProfileComponent implements OnInit {
   editProfile(){
     this.Http.put(Config.api + '/influencer_profile_update/'+this.currentUser.username, JSON.stringify({
       relationship: this.userdata[0]['relationship'],
+      first_name: this.userdata[0]['first_name'],
+      last_name:this.userdata[0]['last_name'],
       education: this.userdata[0]['education'],
       phone: this.userdata[0]['phone'],
       gender: this.userdata[0]['gender'],
