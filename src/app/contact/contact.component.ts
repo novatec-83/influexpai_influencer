@@ -139,9 +139,14 @@
 // }
 
 
+
+
 import {Component, Input, OnInit} from '@angular/core';
+// import {HttpService} from '../services/http-service';
+// import {AuthenticationService} from '../_services';
 import {HttpService} from 'app/serv/http-service';
 import {App_service} from '../app.service';
+
 import swal from 'sweetalert2'
 import {Router} from '@angular/router';
 
@@ -253,7 +258,7 @@ export class TermsAndConditionsComponent {
 
   }
 }
- 
+
 @Component({
   selector: 'privacy-and-policy',
   templateUrl: 'privacy-and-policy.html',
@@ -292,6 +297,3 @@ export class BlogComponent {
 
     }
 }
-
-
-

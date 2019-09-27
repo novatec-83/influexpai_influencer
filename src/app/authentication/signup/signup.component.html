@@ -110,7 +110,7 @@
               </mat-form-field>
          </div>
 
-         <div class="col-md-6">
+         <!-- <div class="col-md-6">
            <mat-form-field class="example-full-width catagery ">
            <mat-select style="color: #000" name="relationship" formControlName="eduCation" [(ngModel)]="model.education" placeholder="Select Education">
              <mat-option *ngFor="let edu of EDUCATIONS" [value]="edu.code">{{ edu.show }}</mat-option>
@@ -119,7 +119,7 @@
                <span *ngIf="f.eduCation.errors.required">Education is required</span>
              </mat-error>
            </mat-form-field>
-     </div>
+     </div> -->
 
      <div class="col-md-6 ">
        <mat-form-field class="example-full-width catagery ">
@@ -145,8 +145,8 @@
             </mat-error>
           </mat-form-field> -->
         <!-- </div> --> 
-        <div class="col-md-6">
-          <!--<i class="fa fa-key" style="zoom: 100%; color: #aaaaaa"></i>-->
+        <!-- <div class="col-md-6">
+          <i class="fa fa-key" style="zoom: 100%; color: #aaaaaa"></i>
           <mat-form-field class="example-full-width catagery ">
           <mat-select name="relationship" formControlName="employement_Status"  style="color: #000" id="pho" [(ngModel)]="model.employment_status" placeholder="Select Employement">
             <mat-option *ngFor="let relation of EMS" [value]="relation.show">{{ relation.show }}</mat-option>
@@ -155,7 +155,7 @@
               <span *ngIf="f.employement_Status.errors.required">Employement status is required</span>
             </mat-error>
           </mat-form-field>
-        </div>
+        </div> -->
        
     
         <!-- <div class="col-md-6"> -->

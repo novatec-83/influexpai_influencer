@@ -68,18 +68,33 @@ export class App_service {
 }
 
 
-  contact_Us(name, email, phone, message) {
-    return this.http.post('http://192.168.29.166:8000/contact-us/',
-    // http://192.168.29.166:8000/contact-us/
-        {
-            'name':name,
-            'email' :email,
-            'mobile_no': phone,
-            'message' :message
+//   contact_Us(name, email, phone, message) {
+//     return this.http.post('http://192.168.29.166:8000/contact-us/',
+//     // http://192.168.29.166:8000/contact-us/
+//         {
+//             'name':name,
+//             'email' :email,
+//             'mobile_no': phone,
+//             'message' :message
 
-        }).map((response: Response) => {
-            console.log(response)
-        });
+//         }).map((response: Response) => {
+//             console.log(response)
+//         });
+// }
+
+
+contact_Us(name, email, phone, message) {
+  return this.http.post('http://192.168.29.166:8000/contact-us/',
+  // http://192.168.29.166:8000/contact-us/
+      {
+          'name':name,
+          'email' :email,
+          'mobile_no': phone,
+          'message' :message
+
+      }).map((response: Response) => {
+          console.log(response)
+      });
 }
 
 

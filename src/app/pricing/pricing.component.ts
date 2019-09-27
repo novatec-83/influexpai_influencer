@@ -24,6 +24,8 @@ export class PricingComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scroll(0,0);
+
   }
 
   getStarted() {
