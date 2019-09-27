@@ -37,7 +37,7 @@
           </label>
           <!--*ngIf="FuncCheckIfImageUploaded()"-->
           <br>
-          <label>{{this.imageName}}</label>
+          <label class="imagename">{{this.imageName}}</label>
           <img *ngIf="FuncCheckNumberOfImages()" src="">
 
           <button mat-raised-button (click)="onUpload()" matStepperNext class="next-btn">
@@ -48,7 +48,7 @@
   </mat-step>
 
   <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
+    <form [formGroup]="secondFormGroup" class="create-showcase">
 
       <ng-template matStepLabel>Overview</ng-template>
       <div class="whole sh-signup-form-fix">
@@ -59,7 +59,7 @@
       <label>Select Category</label>
       </div>
       <div class="col-lg-9">
-        <mat-form-field style="width: 100%;">
+        <mat-form-field style="width: 100%;" class="catagery">
       <mat-select placeholder="{{'Please Select Category'}}"  (change)="selectCat($event.value)" required [(ngModel)]="model.catID" ngDefaultControl [ngModelOptions]="{standalone: true}"  style="width: 100%">
       <mat-option *ngFor="let option of options "  [value]="option.id" >{{ option.name }}</mat-option>
       </mat-select>
@@ -104,7 +104,7 @@
   </mat-step>
 
   <mat-step [stepControl]="thirdFromGroup">
-  <form [formGroup]="thirdFromGroup">
+  <form [formGroup]="thirdFromGroup" class="create-showcase">
   <ng-template matStepLabel>Description</ng-template>
   <div class="row sh-signup-form-fix">
   <div class="col-lg-3" id="margin">
@@ -126,7 +126,7 @@
 
 
   <mat-step [stepControl]="fourthFromGroup">
-  <form [formGroup]="fourthFromGroup" class="sh-signup-form-fix">
+  <form [formGroup]="fourthFromGroup"  class="create-showcase">
   <ng-template matStepLabel>Requirements</ng-template>
   <div class="row">
   <div class="col-lg-3" id="margin">

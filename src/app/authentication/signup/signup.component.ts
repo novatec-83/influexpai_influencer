@@ -133,10 +133,7 @@ export class SignupComponent implements OnInit {
 
           this.registerUser = this.fb.group({
             userName: ['', Validators.required],
-            // firstName: ['', Validators.required],
-            // lastName: ['', Validators.required],
-            firstName:['',Validators.required],
-            lastName:['',Validators.required],
+            fullName: ['', Validators.required],
             eMail: ['', Validators.required],
             phoNe: ['', Validators.required],
             passWord: ['', Validators.required],
@@ -144,7 +141,6 @@ export class SignupComponent implements OnInit {
             employement_Status: ['', Validators.required],
             gendeR: ['', Validators.required],
             eduCation: ['', Validators.required],
-            aDdress:['', Validators.required],
             ciTy: ['', Validators.required],
             counTry: ['', Validators.required],
             staTe: ['', Validators.required],
@@ -298,10 +294,7 @@ export class SignupComponent implements OnInit {
     if (this.recaptcha == true && this.registerUser.invalid) {
       this.srvc_obj.register_user(
         this.model.username,
-        // this.model.name,
-        // this.model.lastname,
-        this.model.first_name,
-        this.model.last_name,
+        this.model.name,
         this.model.email,
         this.model.password,
         this.model.country,
@@ -310,7 +303,6 @@ export class SignupComponent implements OnInit {
         this.model.phone,
         this.model.state,
         this.model.city,
-        this.model.address,
         this.model.employment_status,
         this.model.gender
       ).subscribe((data) => {

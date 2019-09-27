@@ -36,9 +36,9 @@
           </mat-form-field>
           <mat-form-field class=" md-size">
             <input [type]="hide ? 'password' : 'text'"  matInput placeholder="Password" tabindex=2 [formControl]="passwordFormControl" [(ngModel)]="model.password" required>
-          <!--<span class="pointer" data-toggle="tooltip" title=" {{hide? 'Show' : 'Hide'}} Password" matSuffix (click)="hide = !hide">{{  hide ? show : nshow }}</span>-->
-            <i *ngIf= "hide" class="fa fa-eye" style="font-size: 23px; float: right; margin-top: -15px; cursor: pointer" title="Show Password" (click)="hide = !hide"></i>
-            <i *ngIf= "!hide" class="fa fa-eye-slash" style="font-size: 23px;  float: right; margin-top: -15px;  cursor: pointer" title="Hide Password" (click)="hide = !hide"></i>
+<!--            <span class="pointer" data-toggle="tooltip" title=" {{hide? 'Show' : 'Hide'}} Password" matSuffix (click)="hide = !hide">{{  hide ? show : nshow }}</span>-->
+            <i *ngIf= "hide" class="fa fa-eye eye-icon" title="Show Password" (click)="hide = !hide"></i>
+            <i *ngIf= "!hide" class="fa fa-eye-slash eye-icon" title="Hide Password" (click)="hide = !hide"></i>
 
             <mat-error *ngIf="passwordFormControl.hasError('required')">
               Password is <strong>required</strong>
@@ -70,7 +70,7 @@
         <div class="footer text-center">
           <button type="submit" class="button" tabindex=3> Sign in</button>
           <label class="signup-label"> Don’t have an account?
-            <a style="font-size: 15px; color: #0000ff; font-weight: 700;" [routerLink]="['/authentication/signup']"> Sign Up </a></label>
+            <a class="sign-up" [routerLink]="['/authentication/signup']"> Sign Up </a></label>
             <div class="text-center privacy">
               <a href="https://www.influexpai.com/Terms-and-Conditions" target="_blank">
                 Terms of Use           &nbsp;&nbsp;&nbsp;
@@ -79,6 +79,7 @@
         </div>
       </div>
     </form>
-  <!--</div>-->
+  <!-- </div> -->
 </div>
 </div>
+<!-- <app-footer></app-footer> -->
