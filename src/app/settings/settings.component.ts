@@ -75,7 +75,7 @@ export class SettingsComponent implements OnInit {
 
         data => {
           // alert('Subscribe ....');
-          Swal('Subscribe Successfull', '', 'success');
+          Swal('You are Subscribed Successfully', '', 'success');
 
 
         });
@@ -85,7 +85,7 @@ export class SettingsComponent implements OnInit {
 
       this.srvc_obj.do_UnSubsCribe().subscribe(data => {
         console.log('data is', data);
-        Swal('You are now Unubscribe', '', 'success');
+        Swal('You are now Unsubscribed', '', 'success');
 
 
       });

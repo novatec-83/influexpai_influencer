@@ -10,11 +10,13 @@ import { ViewContainerRef } from '@angular/core';
 import {RecapchaService} from '../../recapcha/recapcha.service';
 import {ViewChild} from '@angular/core';
 import { JwtHelper } from 'angular2-jwt';
-import {
-  AuthService,
-  FacebookLoginProvider,
-  GoogleLoginProvider
-} from 'angular5-social-login';
+import { AuthService } from 'angular5-social-login';
+import { FacebookLoginProvider, GoogleLoginProvider } from 'angular5-social-login';
+// import {
+//   AuthService,
+//   FacebookLoginProvider,
+//   GoogleLoginProvider
+// } from 'angular5-social-login';
 import {App_service} from '../../app.service';
 import swal from "sweetalert2";
 
@@ -67,12 +69,13 @@ export class SigninComponent implements OnInit {
     } );
   }
   jwtHelper: JwtHelper = new JwtHelper();
-  socialCallBack= (user) => {
+  JWT;
+    socialCallBack = (user) => {
       this.user = user;
       console.log(this.user);
       const headers = { 'Content-Type': 'application/json' };
       if (user) {
-        const createUser = this.http1.post(Config.api + 'user/social_login_web/', JSON.stringify(
+        const createUser = this.http1.post(Config.api + '/sociallogin/', JSON.stringify(
           {
             user
           }), { headers: headers });
@@ -86,15 +89,16 @@ export class SigninComponent implements OnInit {
               localStorage.setItem('loged_in', '1');
               localStorage.setItem('currentUser', JSON.stringify(user));
               localStorage.setItem('profilePhoto' , this.pic);
-              this.router.navigate(['/profile'+ this.username]);
+              this.router.navigate(['/profile']);
+
               this.showSuccess();
+            
             }
           }
         );
       }
-    
+    }
 
-  }
 
   showSuccess() {
     swal({
@@ -112,18 +116,11 @@ export class SigninComponent implements OnInit {
     this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID).then(this.socialCallBack).catch(user => console.log(user));
 
   }
-
-  googlelogin()
-
- {
+  googlelogin() {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(this.socialCallBack).catch(message => console.log(message));
+
+
   }
-
-
-
-
-
-
 
   signinFb() {
     this.fB.logout();
