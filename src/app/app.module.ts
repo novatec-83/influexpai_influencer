@@ -21,7 +21,7 @@ import {OutletContext} from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import {AgenciesComponent} from './Agencies/Agencies.component';
 import { BrandComponent } from './brand/brand.component';
-
+import { MyshowcaseComponent } from './myshowcase/myshowcase.component';
 import {PricingComponent} from './pricing/pricing.component';
 import {
   BlogComponent,
@@ -57,6 +57,21 @@ import { InfluencersComponent } from './influencers/influencers.component';
 import { RecapchaModule } from './recapcha/recapcha.module';
 import { TextMaskModule } from 'angular2-text-mask';
 
+import { from } from 'rxjs/observable/from';
+// const config= new AuthServiceConfig([
+//   {
+//     id: LinkedinLoginProvider.PROVIDER_ID,
+//     provider: new LinkedinLoginProvider('86pmxhblr5nk3j')
+//   },
+//   {
+//     id: GoogleLoginProvider.PROVIDER_ID,
+//     provider: new GoogleLoginProvider('275856928145-q1oilas7eb0oils1rnr8u14l04ik60nq.apps.googleusercontent.com')
+//   },
+//   {
+//     id: FacebookLoginProvider.PROVIDER_ID,
+//     provider: new FacebookLoginProvider('2076488752606610')
+//   }
+// ], false);
 export function provideConfig() {
 
 
@@ -108,7 +123,8 @@ export function provideConfig() {
     PrivacyComponent,
     TermsAndConditionsComponent,
     TermsComponent,
-    WhatIsInfluexpaiComponent
+    WhatIsInfluexpaiComponent,
+    MyshowcaseComponent
             // AccountSettingComponent,
 // SigninComponent
     // PostSignupComponent

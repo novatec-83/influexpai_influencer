@@ -19,7 +19,10 @@ import {AgenciesComponent} from './Agencies/Agencies.component'
 import { AuthGuard } from './_guards/index';
 import {PricingComponent} from './pricing/pricing.component';
 
+
+
 import { SigninComponent } from './authentication/signin/signin.component';
+import { MyshowcaseComponent } from './myshowcase/myshowcase.component';
 
 
 
@@ -170,7 +173,9 @@ export const AppRoutes: Routes = [
     loadChildren: './docs/docs.module#DocsModule',canActivate: [AuthGuard]
   }]
 },
+ 
 
+{path: 'myshowcase', component: MyshowcaseComponent},
 { path: 'pricing', component: PricingComponent },
 {path: 'contactus', component: ContactComponent},
 

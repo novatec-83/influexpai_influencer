@@ -19,6 +19,7 @@ export class App_service {
   currentUser;
   InstaResponse: any={};
   CurrentUser: any;
+  current: any;
   constructor(private _nav: Router,
               private https: Http, private toast: ToastsManager, private Http: HttpService,private http: Http
     ,@Inject(PLATFORM_ID) private platformId: Object)
@@ -184,6 +185,27 @@ export class App_service {
       .map((response: Response) => {
         response.json();
       });
+  }
+
+
+
+  // mynotes(page) {
+  //   let headers = new Headers({ 'Authorization': 'JWT ' + this.token });
+  //   headers.append('Content-Type', 'application/json');
+  //   return this.http.get(Config.api + 'notesgenie/usernotes/' + this.current.user_id +'?page=' +page, { headers: headers }).map((response: Response) => response.json());
+  // }
+
+  myshowcase(){
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    let headers = new Headers({'Authorization': 'JWT ' + this.currentUser.token});
+    headers.append('Content-Type', 'application/json');
+    // let username = localStorage.getItem('username');
+    return this.Http.get(Config.api+ '/showcase/showcase_list_user/',{headers: headers}).map((response: Response) => {
+      return response.json();
+    })
+
+
+
   }
 
     uploadShowCase(image1, catagory, title, description, urls, requirement1, requirement2) {
