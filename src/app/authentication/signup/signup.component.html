@@ -43,7 +43,7 @@
           <mat-form-field class="example-full-width">
             <input type="text" matInput  name="lastname" placeholder=" Last Name" formControlName="lastName"  [(ngModel)]="model.last_name"required>
             <mat-error *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-              <span *ngIf="f.fullName.errors.required">Lsst Name is required</span>
+              <span *ngIf="f.fullName.errors.required">Last Name is required</span>
             </mat-error>
           </mat-form-field>
         </div>
