@@ -1,9 +1,53 @@
-
 <app-loader></app-loader>
-<div class="login-background">
+  <div class="flexy signin-signup">
+      <form class="form-content" (ngSubmit)="!userFormControl.hasError('required') && !userFormControl.hasError('pattern') && !passwordFormControl.hasError('required')
+      && login(f)" #f="ngForm" novalidate>
+          <div class="text-center">
+              <img class="w-50" src="../../../assets/images/logos/Logo.png" alt="image">
+          </div>
+            <mat-form-field class="w-100 mb-3">
+              <input matInput type="text" placeholder="Username"  tabindex=1 [formControl]="userFormControl"  [(ngModel)]="model.username" required>
+              <span class="pointer" *ngIf="model.username"  matSuffix md-list-icon aria-label="Clear" (click)="model.username=''">
+                              <i class="fa fa-close"></i>
+                </span>
+              <mat-error *ngIf="userFormControl.hasError('pattern')">
+                Please enter a valid username
+              </mat-error>
+              <mat-error *ngIf="userFormControl.hasError('required')">
+                Username is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100">
+              <input [type]="hide ? 'password' : 'text'"  matInput placeholder="Password" tabindex=2 [formControl]="passwordFormControl" [(ngModel)]="model.password" required>
+              <i *ngIf= "hide" class="fa fa-eye eye-icon" title="Show Password" (click)="hide = !hide"></i>
+              <i *ngIf= "!hide" class="fa fa-eye-slash eye-icon" title="Hide Password" (click)="hide = !hide"></i>
+  
+              <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Password is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <div class="row ">
+              <div class="col-md-6">
+                  <div class="text-left">
+                      <mat-slide-toggle [(checked)]="model">
+                        Stay Signed In</mat-slide-toggle>
+                    </div>
+              </div>
+              <div class="col-md-6 text-right">
+                  <div [ngClass]="{ 'has-error':!recaptcha}">
+                      <app-recapcha></app-recapcha>
+                                <div *ngIf="!recaptcha" >Please confirm you are not a robot!</div>
+                              </div>
+              </div>
+              <div class="col-md-12 text-center mt-3">
+                  <button type="submit" class="btn btn-primary">Sign In</button>
+              </div>
+          </div>
+        </form>
+  </div>
+<!-- <div class="login-background">
   <div class="bg-3 col-md-12 col-lg-12">
-  <!--<div class="col-lg-4 col-md-6 col-sm-8 col-xs-12 login-wrap">-->
-    <form class="sh-signup-form-fix ng-untouched ng-pristine ng-valid"
+        <form class="sh-signup-form-fix ng-untouched ng-pristine ng-valid"
           (ngSubmit)="!userFormControl.hasError('required') && !userFormControl.hasError('pattern') && !passwordFormControl.hasError('required')
                && login(f)" #f="ngForm" novalidate>
       <div class="card form-box">
@@ -36,7 +80,6 @@
           </mat-form-field>
           <mat-form-field class=" md-size">
             <input [type]="hide ? 'password' : 'text'"  matInput placeholder="Password" tabindex=2 [formControl]="passwordFormControl" [(ngModel)]="model.password" required>
-<!--            <span class="pointer" data-toggle="tooltip" title=" {{hide? 'Show' : 'Hide'}} Password" matSuffix (click)="hide = !hide">{{  hide ? show : nshow }}</span>-->
             <i *ngIf= "hide" class="fa fa-eye eye-icon" title="Show Password" (click)="hide = !hide"></i>
             <i *ngIf= "!hide" class="fa fa-eye-slash eye-icon" title="Hide Password" (click)="hide = !hide"></i>
 
@@ -79,7 +122,6 @@
         </div>
       </div>
     </form>
-  <!-- </div> -->
 </div>
-</div>
+</div> -->
 <!-- <app-footer></app-footer> -->
