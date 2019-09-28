@@ -21,6 +21,7 @@
     height: 30px;
     padding: 0;
     float: right;
+    outline: 0;
         .mat-icon {
             color: white
         }
@@ -59,8 +60,8 @@ input[_ngcontent-c4] {
     width:90%
 }
 .recapcha-img{
-    height: 15px;
+    height: 16px;
     position: absolute;
-    top: 8px;
-    right: 2px;
+    top: 7px;
+    right: 3px;
 }
