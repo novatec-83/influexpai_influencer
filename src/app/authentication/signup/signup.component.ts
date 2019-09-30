@@ -296,17 +296,17 @@ export class SignupComponent implements OnInit {
     if (this.recaptcha == true && this.registerUser.invalid) {
       this.srvc_obj.register_user(
         this.model.username,
-        this.model.name='null',
+        this.model.name,
         this.model.first_name,this.model.last_name,
         this.model.email,
         this.model.password,
         this.model.country,
-        this.model.relationship='null',
-        this.model.education='null',
+        this.model.relationship,
+        this.model.education,
         this.model.phone,
         this.model.state,
         this.model.city,
-        this.model.employment_status='null',
+        this.model.employment_status,
         this.model.gender
       ).subscribe((data) => {
 
