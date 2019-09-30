@@ -45,6 +45,9 @@ button, input, optgroup, select, textarea {
 .mat-slide-toggle{
   height: unset!important;
 }
+.mat-slide-toggle-label{
+  margin: 0;
+}
 /* end mat toggle button */
 /*Start From custome */
 .mat-form-field-label {
@@ -498,6 +501,7 @@ pts-right{
   margin: 0;
   font-size: 16px;
   display: block;
+  font-weight: 600;
 }
 /* End login page */
 
