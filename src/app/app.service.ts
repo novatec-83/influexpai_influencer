@@ -30,7 +30,7 @@ export class App_service {
   showerror(){
     this.toast.error('Some Server Side Error')
   }
-  register_user(username, name,first_name,last_name, email , password, country ,
+  register_user(username, name,first_name,last_name, email , password, country,address,
                relationship , education, phone, state, city, employment_status, gender ){
     return this.Http.post(Config.api + '/influencer_signup/',
       {
@@ -41,6 +41,7 @@ export class App_service {
         'email': email ,
         'password': password,
         'country': country,
+        'address': null,
         'relationship': relationship,
         'education': education,
         'phone': phone,
@@ -48,6 +49,7 @@ export class App_service {
         'city': city,
         'employment_status': employment_status,
         'gender': gender,
+        
       }).map((res:Response)=>{
       if (res.status==200){
         this.CurrentUser= res.json();

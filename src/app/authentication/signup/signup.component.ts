@@ -146,6 +146,7 @@ export class SignupComponent implements OnInit {
             ciTy: ['', Validators.required],
             counTry: ['', Validators.required],
             staTe: ['', Validators.required],
+            
           });
 
     this.fB.logout();
@@ -301,6 +302,7 @@ export class SignupComponent implements OnInit {
         this.model.email,
         this.model.password,
         this.model.country,
+        this.model.address, 
         this.model.relationship='null',
         this.model.education='null',
         this.model.phone,
@@ -308,6 +310,23 @@ export class SignupComponent implements OnInit {
         this.model.city,
         this.model.employment_status='null',
         this.model.gender
+
+        // 'username': username ,
+        // 'name': name,
+        // 'first_name': first_name,
+        // 'last_name': last_name,
+        // 'email': email ,
+        // 'password': password,
+        // 'country': country,
+        // 'address': null,
+        // 'relationship': relationship,
+        // 'education': education,
+        // 'phone': phone,
+        // 'state': state,
+        // 'city': city,
+        // 'employment_status': employment_status,
+        // 'gender': gender,
+
       ).subscribe((data) => {
 
           this._nav.navigate(['/authentication/signin']);
