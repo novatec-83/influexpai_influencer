@@ -35,9 +35,11 @@
   font-size: 20px;
   cursor: pointer;
 }
-.forgot{
+.forgot,
+.privacy {
   font-size: 12px;
   font-weight: 600;
+  display: inline-block;
 }
 .mat-form-field input{
   font-size: 24px;
