@@ -234,7 +234,8 @@ contact_Us(name, email, phone, message) {
 
       return this.Http.post(Config.api + '/showcase/add-showcase/', {
         'image1': image1,
-        'catagory': catagory,
+        // 'catagory': catagory,
+        'catagory_id': catagory,
         'title': title,
         'description': description,
         'urls': urls,
