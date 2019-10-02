@@ -37,13 +37,13 @@
 
           <div class="col-lg-6 col-md-6 col-sm-12">
             <mat-form-field class="example-full-width">
-              <input type="text" matInput placeholder="First Name" disabled [(ngModel)]="userdata[0]['first_name']" [ngModelOptions]="{standalone: true}">
+              <input type="text" matInput placeholder="First Name"  [(ngModel)]="userdata[0]['first_name']" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
           </div>
 
           <div class="col-lg-6 col-md-6 col-sm-12">
             <mat-form-field class="example-full-width">
-              <input type="text" matInput placeholder="Last Name" disabled [(ngModel)]="userdata[0]['last_name']" [ngModelOptions]="{standalone: true}">
+              <input type="text" matInput placeholder="Last Name"  [(ngModel)]="userdata[0]['last_name']" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
           </div>
 
@@ -151,6 +151,23 @@
               <input type="text" matInput placeholder="Address">
             </mat-form-field>
           </div>
+          <img  class="img-responsive" height="200px" style="border-radius: 100px" data-target=".bd-example-modal-lg3" data-toggle="modal"  [src]="profile_image"  onerror="this.src='assets/images/avatar.svg'" >
+          <div class="row ">
+              <div class="col-md-12 text-right">
+                            <span class="btn-file">
+                    Upload Image
+                    <input type="file"  class="upload-input" (change)="onChange($event)" accept="image/*">
+                  </span>
+              </div>
+            </div>
+            <div aria-hidden="true" aria-labelledby="mySmallModalLabel" class="modal fade bd-example-modal-lg3" role="dialog" tabindex="-1">
+                <div  class="modal-dialog modal-lg">
+                  <div  class="modal-content">
+                    <img  class="img-responsive" [src]="profile_image">
+                  </div>
+                </div>
+              </div>
+
             <div class="col-lg-6 col-md-6 col-sm-12 text-right">
               <button type="submit" (click)="editProfile()" class="btn btn-rounded">
                 Update

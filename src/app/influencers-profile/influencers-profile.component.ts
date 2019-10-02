@@ -13,6 +13,7 @@ import {App_service} from '../app.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {FormControl} from '@angular/forms';
 import {ToastsManager} from 'ng2-toastr';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-influencers-profile',
@@ -27,11 +28,13 @@ export class InfluencersProfileComponent implements OnInit {
   name: string;
   NE;
   username;
+  image :File
   phone;first_name;last_name;
   currentUser: any;
   userdata: any =[];
   userdata1: any = {};
   @ViewChild('username') userNameInputRef: ElementRef;
+  profile_image: any;
 
   constructor(public dialog: MatDialog, public toastr: ToastsManager, vcr: ViewContainerRef,
               private el: ElementRef,private Http: HttpService,private src_obj: App_service) {
@@ -76,7 +79,7 @@ export class InfluencersProfileComponent implements OnInit {
 
   ngOnInit() {
     this.username= localStorage.getItem('username');
-
+this.loadprofilepic();
 
     this.src_obj.getUserData().subscribe((data) => {
 
@@ -140,8 +143,42 @@ export class InfluencersProfileComponent implements OnInit {
 
       }
     });
-  }
+  }  
+  
+  
+  onChange($event) {
+    this.image= $event.target.files[0];
+    //
+    // console.log('Event on OnChange',$event.target.files[0]);
+    console.log('Event on OnChange',this.image);
+    this.src_obj.onUpload(this.image).subscribe((response) => {
+            // console.log('set any success actions...');
+            this.loadprofilepic();
+            swal({
+                type: 'success',
+                title: 'Profile PIcture Updated.\n' +
+                '\n',
+                // text: 'Please check your username or password',
+                showConfirmButton: false,
+                width: '512px',
+                timer: 2000
+          
+              }); 
 
+        },
+        (error) => {
+          console.log('set any error actions...');
+      })
+
+      }
+      loadprofilepic(){
+        this.src_obj.get_profile_pic().subscribe(observer=>{
+    
+            // this.profile_image= observer.Message.path;
+            this.profile_image= observer['message'];
+            console.log('Result is ', this.profile_image);
+        })
+    }
 
   openDialog_edit(): void {
     const dialogRef = this.dialog.open(DemographicComponent, {
@@ -154,6 +191,7 @@ export class InfluencersProfileComponent implements OnInit {
       this.animal = result;
     });
   }
+ 
 
 
   openDialog_accolades(): void {
