@@ -297,7 +297,7 @@ export class SignupComponent implements OnInit {
     if (this.recaptcha == true && this.registerUser.invalid) {
       this.srvc_obj.register_user(
         this.model.username,
-        this.model.name='null',
+        this.model.name,
         this.model.first_name,this.model.last_name,
         this.model.email,
         this.model.password,
@@ -308,24 +308,10 @@ export class SignupComponent implements OnInit {
         this.model.phone,
         this.model.state,
         this.model.city,
-        this.model.employment_status='null',
+        this.model.employment_status,
         this.model.gender
 
-        // 'username': username ,
-        // 'name': name,
-        // 'first_name': first_name,
-        // 'last_name': last_name,
-        // 'email': email ,
-        // 'password': password,
-        // 'country': country,
-        // 'address': null,
-        // 'relationship': relationship,
-        // 'education': education,
-        // 'phone': phone,
-        // 'state': state,
-        // 'city': city,
-        // 'employment_status': employment_status,
-        // 'gender': gender,
+       
 
       ).subscribe((data) => {
 

@@ -24,12 +24,20 @@ import swal from 'sweetalert2';
 })
 export class InfluencersProfileComponent implements OnInit {
 
+
+  getContriesData: any = [];
+  states: any = [];
+  getCity: any = [];
+  getContryData: any = [];
+  getContryData1: any = [];
+
   animal: string;
   name: string;
   NE;
   username;
   image :File
-  phone;first_name;last_name;
+  // phone;first_name;last_name;
+  phone;first_name;last_name;address;
   currentUser: any;
   userdata: any =[];
   userdata1: any = {};
@@ -81,6 +89,16 @@ export class InfluencersProfileComponent implements OnInit {
     this.username= localStorage.getItem('username');
 this.loadprofilepic();
 
+    // this.src_obj.getCountiresData().subscribe((data) => {
+
+    //   for (let key in data) {
+    //     this.getContriesData.push(data[key]);
+
+    //   }
+    // });
+
+
+
     this.src_obj.getUserData().subscribe((data) => {
 
       // console.log('data isss', data)
@@ -100,16 +118,24 @@ this.loadprofilepic();
   });
 
   }
+
+
+  
   editProfile(){
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const headers = new Headers();
+      headers.append('Content-Type', 'application/json');
     this.Http.put(Config.api + '/influencer_profile_update/'+this.currentUser.username, JSON.stringify({
-      relationship: this.userdata[0]['relationship'],
+      // relationship: this.userdata[0]['relationship'],
       first_name: this.userdata[0]['first_name'],
       last_name:this.userdata[0]['last_name'],
-      education: this.userdata[0]['education'],
+      // education: this.userdata[0]['education'],
       phone: this.userdata[0]['phone'],
       gender: this.userdata[0]['gender'],
-      employment_status: this.userdata[0]['employment_status']
-      })).map((response: Response) => response.json()).subscribe(
+      address: this.userdata[0]['address'],
+      // employment_status: this.userdata[0]['employment_status']
+      }),{headers:headers}
+      ).map((response: Response) => response.json()).subscribe(
       data => {
         this.toastr.success('Profile Updated');
 
