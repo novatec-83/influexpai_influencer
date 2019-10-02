@@ -1,3 +1,16 @@
+<section>
+<div class="container-fluid p-0">
+  <div class="profile showcase-background">
+    <div class="container" >
+      <!-- <img src="{{message.show_image[0]?.image}}"  onerror="this.src='../../../assets/images/logos/Logo1.png'" alt=""> -->
+    </div>
+  </div>
+</div>
+<div class="container" >
+  <div class="col-md-4">
+
+  </div>
+</div>
 <div *ngFor="let data of datashowcase ">
     <p>{{data.city}}</p>
     <p>{{data.email}}</p>
@@ -13,3 +26,4 @@
     <p *ngIf="messgae.status == A">Approved </p> -->
     <p> <img src="{{message.show_image[0]?.image}}" onerror="this.src='../../../assets/images/logos/Logo1.png'" alt=""></p>
   </div>
+</section>

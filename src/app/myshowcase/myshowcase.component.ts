@@ -30,7 +30,6 @@ this.mysc();
     console.log(this.datashowcase)
       this.userdata= data.message;
       this.show_image = data.show_image;
-      alert(this.show_image);
       this.userdata1 = data.User_data;
       this.city = this.datashowcase['city'];
       for (let citys of this.datashowcase){
