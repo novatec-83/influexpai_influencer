@@ -75,7 +75,7 @@ export class SigninComponent implements OnInit {
       console.log(this.user);
       const headers = { 'Content-Type': 'application/json' };
       if (user) {
-        const createUser = this.http1.post(Config.api + '/sociallogin/', JSON.stringify(
+        const createUser = this.http1.post(Config.api + '/socialloginInflu/', JSON.stringify(
           {
             user
           }), { headers: headers });
