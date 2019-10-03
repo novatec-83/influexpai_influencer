@@ -302,11 +302,14 @@ logoutsweetalert() {
     })
   }
     loadprofilepic(){
-    this.obj.get_profile_pic().subscribe(observer=>{
+     
+      this.obj.get_profile_pic().subscribe(observer=>{
 
-      this.profile_image= observer.Message.path;
-      console.log('Result is ', this.profile_image);
+        // this.profile_image= observer.Message.path;
+        this.profile_image= observer['message'];
+    
+        console.log('Result is ', this.profile_image);
     })
-    }
+}
 
 }
