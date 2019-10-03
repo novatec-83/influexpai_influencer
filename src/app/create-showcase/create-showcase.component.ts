@@ -207,7 +207,8 @@ export class CreateShowcaseComponent implements OnInit  {
       },
       error => {
 
-        console.log('Error isss', error);
+        // console.log('Error isss', error);
+        Swal('Showcase Create error', '', 'error')
 
       });
   }

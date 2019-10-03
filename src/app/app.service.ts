@@ -10,6 +10,7 @@ import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import {HttpErrorResponse} from '@angular/common/http';
 import swal from "sweetalert2";
 import {ErrorObservable} from 'rxjs/observable/ErrorObservable';
+import { tap } from 'rxjs/operators/tap';
 
 
 
@@ -19,6 +20,7 @@ export class App_service {
   currentUser;
   InstaResponse: any={};
   CurrentUser: any;
+  username: any
   current: any;
   constructor(private _nav: Router,
               private https: Http, private toast: ToastsManager, private Http: HttpService,private http: Http
@@ -30,7 +32,7 @@ export class App_service {
   showerror(){
     this.toast.error('Some Server Side Error')
   }
-  register_user(username, name,first_name,last_name, email , password, country ,
+  register_user(username, name,first_name,last_name, email , password, country,address,
                relationship , education, phone, state, city, employment_status, gender ){
     return this.Http.post(Config.api + '/influencer_signup/',
       {
@@ -41,6 +43,7 @@ export class App_service {
         'email': email ,
         'password': password,
         'country': country,
+        'address': null,
         'relationship': relationship,
         'education': education,
         'phone': phone,
@@ -48,6 +51,7 @@ export class App_service {
         'city': city,
         'employment_status': employment_status,
         'gender': gender,
+        
       }).map((res:Response)=>{
       if (res.status==200){
         this.CurrentUser= res.json();
@@ -61,7 +65,29 @@ export class App_service {
 
     })
   }
+  onUpload(image:File){
+    // const fd= new FormData();
+    const fd2= new FormData();
+    fd2.append('input_file0',image);
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.username =  this.currentUser.username;
+    fd2.append('username',this.username);
 
+    return this.http.post(Config.api + '/influencerUploadImage/',fd2 )
+        .pipe(tap(res=>{
+            return res;
+        }))
+}
+get_profile_pic(){
+  this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  if ( this.currentUser != null ){
+  let username =  this.currentUser.username;
+
+  return this.http.get(Config.api+ '/getinfluencerimage/' + username).map((response: Response) => {
+      return response.json();
+  });
+}
+}
   get_All_Blog(){
     return this.http.get(Config.api + '/getallblog/').map((response: Response) => response.json());
 
@@ -100,9 +126,14 @@ contact_Us(name, email, phone, message) {
 
           getUserData() {
             // let currentUser= localStorage.getItem('currentUser');
-            let username = localStorage.getItem('username');
+            // let username = localStorage.getItem('username');
+            // let username = localStorage.getItem('currentUser');
+            this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  if ( this.currentUser != null ){
+  let username =  this.currentUser.username;
             return this.Http.get(Config.api + '/influencer_profile_get_edit/' + username).map((response: Response) => response.json());
           }
+        }
 
       login(username: string, password: string) {
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -232,7 +263,8 @@ contact_Us(name, email, phone, message) {
 
       return this.Http.post(Config.api + '/showcase/add-showcase/', {
         'image1': image1,
-        'catagory': catagory,
+        // 'catagory': catagory,
+        'catagory_id': catagory,
         'title': title,
         'description': description,
         'urls': urls,
@@ -438,25 +470,25 @@ contact_Us(name, email, phone, message) {
     });
   }
 
-  onUpload(image: File)
-  {
-    const fd= new FormData();
-    let id= localStorage.getItem('user_id');
-    fd.append('path', image);
-    let username =  localStorage.getItem('username');
-    return this.Http.post(Config.api + '/profile/' + username, fd)
-      .map(res=>{
-        console.log('Responce is', res);
-      })
-  }
+  // onUpload(image: File)
+  // {
+  //   const fd= new FormData();
+  //   let id= localStorage.getItem('user_id');
+  //   fd.append('path', image);
+  //   let username =  localStorage.getItem('username');
+  //   return this.Http.post(Config.api + '/profile/' + username, fd)
+  //     .map(res=>{
+  //       console.log('Responce is', res);
+  //     })
+  // }
 
-  get_profile_pic(){
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    let username =  localStorage.getItem('username');
-    return this.Http.get(Config.api+ '/profile_view/' + username).map((response: Response) => {
-      return response.json();
-    });
-  }
+  // get_profile_pic(){
+  //   this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  //   let username =  localStorage.getItem('username');
+  //   return this.Http.get(Config.api+ '/profile_view/' + username).map((response: Response) => {
+  //     return response.json();
+  //   });
+  // }
 
     forgot_password_code(email){
     return this.Http.post(Config.api+ '/forgetpasswordcode/',

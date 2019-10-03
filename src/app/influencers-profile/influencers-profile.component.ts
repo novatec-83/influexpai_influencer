@@ -13,6 +13,7 @@ import {App_service} from '../app.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {FormControl} from '@angular/forms';
 import {ToastsManager} from 'ng2-toastr';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-influencers-profile',
@@ -23,15 +24,25 @@ import {ToastsManager} from 'ng2-toastr';
 })
 export class InfluencersProfileComponent implements OnInit {
 
+
+  getContriesData: any = [];
+  states: any = [];
+  getCity: any = [];
+  getContryData: any = [];
+  getContryData1: any = [];
+
   animal: string;
   name: string;
   NE;
   username;
-  phone;first_name;last_name;
+  image :File
+  // phone;first_name;last_name;
+  phone;first_name;last_name;address;
   currentUser: any;
   userdata: any =[];
   userdata1: any = {};
   @ViewChild('username') userNameInputRef: ElementRef;
+  profile_image: any;
 
   constructor(public dialog: MatDialog, public toastr: ToastsManager, vcr: ViewContainerRef,
               private el: ElementRef,private Http: HttpService,private src_obj: App_service) {
@@ -76,6 +87,16 @@ export class InfluencersProfileComponent implements OnInit {
 
   ngOnInit() {
     this.username= localStorage.getItem('username');
+this.loadprofilepic();
+
+    // this.src_obj.getCountiresData().subscribe((data) => {
+
+    //   for (let key in data) {
+    //     this.getContriesData.push(data[key]);
+
+    //   }
+    // });
+
 
 
     this.src_obj.getUserData().subscribe((data) => {
@@ -97,16 +118,24 @@ export class InfluencersProfileComponent implements OnInit {
   });
 
   }
+
+
+  
   editProfile(){
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const headers = new Headers();
+      headers.append('Content-Type', 'application/json');
     this.Http.put(Config.api + '/influencer_profile_update/'+this.currentUser.username, JSON.stringify({
-      relationship: this.userdata[0]['relationship'],
+      // relationship: this.userdata[0]['relationship'],
       first_name: this.userdata[0]['first_name'],
       last_name:this.userdata[0]['last_name'],
-      education: this.userdata[0]['education'],
+      // education: this.userdata[0]['education'],
       phone: this.userdata[0]['phone'],
       gender: this.userdata[0]['gender'],
-      employment_status: this.userdata[0]['employment_status']
-      })).map((response: Response) => response.json()).subscribe(
+      address: this.userdata[0]['address'],
+      // employment_status: this.userdata[0]['employment_status']
+      }),{headers:headers}
+      ).map((response: Response) => response.json()).subscribe(
       data => {
         this.toastr.success('Profile Updated');
 
@@ -140,8 +169,42 @@ export class InfluencersProfileComponent implements OnInit {
 
       }
     });
-  }
+  }  
+  
+  
+  onChange($event) {
+    this.image= $event.target.files[0];
+    //
+    // console.log('Event on OnChange',$event.target.files[0]);
+    console.log('Event on OnChange',this.image);
+    this.src_obj.onUpload(this.image).subscribe((response) => {
+            // console.log('set any success actions...');
+            this.loadprofilepic();
+            swal({
+                type: 'success',
+                title: 'Profile PIcture Updated.\n' +
+                '\n',
+                // text: 'Please check your username or password',
+                showConfirmButton: false,
+                width: '512px',
+                timer: 2000
+          
+              }); 
 
+        },
+        (error) => {
+          console.log('set any error actions...');
+      })
+
+      }
+      loadprofilepic(){
+        this.src_obj.get_profile_pic().subscribe(observer=>{
+    
+            // this.profile_image= observer.Message.path;
+            this.profile_image= observer['message'];
+            console.log('Result is ', this.profile_image);
+        })
+    }
 
   openDialog_edit(): void {
     const dialogRef = this.dialog.open(DemographicComponent, {
@@ -154,6 +217,7 @@ export class InfluencersProfileComponent implements OnInit {
       this.animal = result;
     });
   }
+ 
 
 
   openDialog_accolades(): void {
