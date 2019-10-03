@@ -110,7 +110,7 @@ padding: 10px;
 }
 .mat-select{
   text-align: left;
-  height: 35px;
+  height: 2s3px;
 }
 
 
@@ -149,7 +149,7 @@ padding: 10px;
 //   font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
 // }
 .btn-rounded{
-  background: #1b3763;
+  background: #82D0DC;
   color: #fff;
   text-align: center;
   margin-top: 1%;
@@ -205,7 +205,7 @@ padding: 10px;
   text-align: center;
   font-size: 32px;
   color: #fff;
-  background: #1b3763;
+  background: #82D0DC;
   border-radius: 5px;
   margin: -30px 0 0;
   padding: 6px
@@ -394,4 +394,41 @@ padding: 10px;
 }
 .profile-form-btn:hover{
   background: #cc0000;
+}
+.upload-img-div {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.img-area{
+  position: relative;
+}
+.custom-file-input{
+  overflow: hidden;
+    position: relative;
+    padding: 8px 0;
+}
+.upload-input {
+  position: absolute;
+  left: 204px;
+  top: -92px;
+  width: 18px;
+  height: 16px;
+  opacity: 0;
+  z-index: 1;
+}
+.camera-icon {
+  position: absolute;
+  left: 203px;
+  top: -89px;;
+  width: 18px;
+  height: 16px;
+  font-size: 16px;
+}
+.image-area {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  -o-object-fit: cover;
+  object-fit: cover;
 }

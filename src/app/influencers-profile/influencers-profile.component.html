@@ -23,55 +23,55 @@
     <ng-container>
       <form class="profile-form text-center " >
         <div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
             <mat-form-field class="example-full-width">
               <input type="text" matInput placeholder="Username" disabled name="username" (focus)="show(username)" #username [(ngModel)]="userdata1['username']" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
             <mat-form-field class="example-full-width">
               <input type="text" matInput placeholder="Email" disabled [(ngModel)]="userdata1['email']" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
             <mat-form-field class="example-full-width">
               <input type="text" matInput placeholder="First Name"  [(ngModel)]="userdata[0]['first_name']" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
             <mat-form-field class="example-full-width">
               <input type="text" matInput placeholder="Last Name"  [(ngModel)]="userdata[0]['last_name']" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
               <mat-form-field class="example-full-width" >
                 <input type="text" matInput placeholder="Phone" [(ngModel)]="userdata[0]['phone']" [ngModelOptions]="{standalone: true}">
               </mat-form-field>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                 <mat-form-field class="example-full-width" >
                   <input type="text" matInput placeholder="Country" [(ngModel)]="userdata[0]['country']" [ngModelOptions]="{standalone: true}" >
                   <!--<mat-option *ngFor="let edu of EMS" value="edu.code" >{{edu.show}}</mat-option>-->
                 </mat-form-field>
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                 <mat-form-field class="example-full-width" >
                   <input type="text" matInput placeholder="City" [(ngModel)]="userdata[0]['city']" [ngModelOptions]="{standalone: true}" >
                 </mat-form-field>
               </div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                   <mat-form-field class="example-full-width">
                     <input type="text" matInput placeholder="State" [(ngModel)]="userdata[0]['state']" [ngModelOptions]="{standalone: true}" >
                   </mat-form-field>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                     <mat-form-field class="example-full-width" >
                     <mat-select placeholder="Genders " [(ngModel)]="userdata[0]['gender']" [ngModelOptions]="{standalone: true}" style="padding-top: 0!important; text-align:initial; width: 100%">
                       <mat-option *ngFor="let rel of genders"  [value]="rel.value">{{rel.show}}</mat-option>
                     </mat-select>
                     </mat-form-field>
                   </div>
-                  <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
                       <mat-form-field class="example-full-width">
                         <input type="text" matInput placeholder="Address"  [(ngModel)]="userdata[0]['address']" [ngModelOptions]="{standalone: true}">
                         <!-- <input type="text" matInput placeholder="Address"  [(ngModel)]="userdata[0]['address']" [ngModelOptions]="{standalone: true}"> -->
@@ -79,13 +79,15 @@
                       </mat-form-field>
                     </div>
                        <div class="col-lg-6 col-md-6 col-sm-12">
-                    <img  class="img-responsive" height="200px" style="border-radius: 100px" data-target=".bd-example-modal-lg3" data-toggle="modal"  [src]="profile_image"  onerror="this.src='assets/images/avatar.svg'" >
+                    <img  class="image-area " height="200px" style="border-radius: 100px" data-target=".bd-example-modal-lg3" data-toggle="modal"  [src]="profile_image"  onerror="this.src='assets/images/avatar.svg'" >
                     <div class="row ">
                         <div class="col-md-12 text-right">
-                                      <span class="btn-file">
+                                      <!-- <span class="btn-file">
                               Upload Image
                               <input type="file"  class="upload-input" (change)="onChange($event)" accept="image/*">
-                            </span>
+                            </span> -->
+                            <input type="file"  class="upload-input" (change)="onChange($event)" accept="image/*">
+                            <i class="fa fa-camera camera-icon">  </i>
                         </div>
                       </div>
                       <div aria-hidden="true" aria-labelledby="mySmallModalLabel" class="modal fade bd-example-modal-lg3" role="dialog" tabindex="-1">
@@ -95,14 +97,27 @@
                             </div>
                           </div>
                         </div>
+                        <!-- <div class="upload-img-div">
+                          <span class="image-area">
+                            <div class="custom-file-input">
+                              <input type="file"  class="upload-input" (change)="onChange($event)" accept="image/*">
+                              <div>
+                                <i class="fas fa-camera"></i>
+                                -- <img  class="img-responsive" height="200px" style="border-radius: 100px" data-target=".bd-example-modal-lg3" data-toggle="modal"  [src]="profile_image"  onerror="this.src='assets/images/avatar.svg'" >
+                                <img  class="img-responsive" [src]="profile_image">
+                              </div>
+                            </div>
+                          </span>
+                        </div> -->
           
-                      <div class="col-lg-6 col-md-6 col-sm-12 text-right">
-                        <button type="submit" (click)="editProfile()" class="btn btn-rounded">
-                          Update
-                        </button>
-          
-                    </div>
           </div>
+          
+          <div class="col-lg-6 col-md-6 col-sm-12 text-right">
+            <button type="submit" (click)="editProfile()" class="btn btn-rounded">
+              Update
+            </button>
+
+        </div>
         </div>
       </form>
     </ng-container>
