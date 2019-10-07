@@ -124,34 +124,64 @@ export class CreateShowcaseComponent implements OnInit  {
     //   // console.log(this.input, 'input');
     //   // this.isLinear= true;
     //   this.files = target.files;
-    //   this.image = target.files;
-    //
+    //   this.image = this.files;
+    // alert(this.image)
     //   if (this.fileList.indexOf(this.files[0]) === -1) {
     //     this.fileList.push(this.files[0]);
-    //
-    //
+    
+    
     //   }
     //   const reader1 = new FileReader();
     //   reader1.onload = (e: any) => {
     //     if (this.ImgSrc.indexOf(e.target.result) === -1) {
     //       this.ImgSrc.push(e.target.result);
     //       this.varImg= this.ImgSrc
-    //
+    // alert(this.ImgSrc)
     //       console.log('Base64Image', this.ImgSrc);
     //       // this.stepperFirstpage.patchValue({add_images: reader1.result});
     //     }
     //   };
-    //
+    
     //   reader1.readAsDataURL(this.fileList[(this.fileList.length - 1)]);
     // }
 
 
-  onChange(event) {
-  this.image= <File>event.target.files[0];
-    this.imageName= event.target.files[0].name;
-    console.log('Event is.............',<File>event.srcElement.files[0].name);
+  // onChange(event) {
+  // this.image= <File>event.target.files[0];
+  //   this.imageName= event.target.files[0].name;
+  //   console.log('Event is.............',<File>event.srcElement.files[0].name);
 
-  }
+  // }
+  onChange($event) {
+    this.image= $event.target.files[0];
+    this.image= <File>$event.target.files[0];
+    this.imageName=  $event.target.files[0].name ;
+    console.log('Event is.............',<File>$event.srcElement.files[0].name);
+
+  
+    //
+    // console.log('Event on OnChange',$event.target.files[0]);
+    console.log('Event on OnChange',this.image);
+    this.app_Service.onupload(this.image).subscribe((response) => {
+            // console.log('set any success actions...');
+          
+            swal({
+                type: 'success',
+                title: 'PIcture Uploaded.\n' +
+                '\n',
+                // text: 'Please check your username or password',
+                showConfirmButton: false,
+                width: '512px',
+                timer: 2000
+          
+              }); 
+
+        },
+        (error) => {
+          console.log('set any error actions...');
+      })
+
+      }
 
   onUpload(){
     const fd= new FormData();
