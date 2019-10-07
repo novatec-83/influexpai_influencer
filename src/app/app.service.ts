@@ -65,6 +65,19 @@ export class App_service {
 
     })
   }
+  onupload(image:File){
+    // const fd= new FormData();
+    const fd2= new FormData();
+    fd2.append('input_file0',image);
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.username =  this.currentUser.username;
+    fd2.append('username',this.username);
+
+    return this.http.post(Config.api + '/showcase/Upload-Image',fd2 )
+        .pipe(tap(res=>{
+            return res;
+        }))
+}
   onUpload(image:File){
     // const fd= new FormData();
     const fd2= new FormData();

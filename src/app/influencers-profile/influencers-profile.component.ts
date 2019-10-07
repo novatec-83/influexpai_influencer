@@ -132,6 +132,9 @@ this.loadprofilepic();
       // education: this.userdata[0]['education'],
       phone: this.userdata[0]['phone'],
       gender: this.userdata[0]['gender'],
+      city: this.userdata[0]['city'],
+      state: this.userdata[0]['state'],
+      country: this.userdata[0]['country'],
       address: this.userdata[0]['address'],
       // employment_status: this.userdata[0]['employment_status']
       }),{headers:headers}
@@ -231,8 +234,6 @@ this.loadprofilepic();
       this.animal = result;
     });
   }
-
-
   openDialog_employ_status(): void {
     const dialogRef = this.dialog.open(EmploymentStatusComponent, {
       width: '750px',
