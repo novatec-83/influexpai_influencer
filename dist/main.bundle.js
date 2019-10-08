@@ -761,7 +761,7 @@ var App_service = (function () {
             'email': email,
             'password': password,
             'country': country,
-            'address': null,
+            'address': address,
             'relationship': relationship,
             'education': education,
             'phone': phone,
@@ -804,6 +804,13 @@ var App_service = (function () {
             .pipe(Object(__WEBPACK_IMPORTED_MODULE_9_rxjs_operators_tap__["a" /* tap */])(function (res) {
             return res;
         }));
+    };
+    App_service.prototype.checkuser = function (check) {
+        return this.http.get(__WEBPACK_IMPORTED_MODULE_4__config__["a" /* Config */].api + '/user_name_exist/' + check).map(function (response) {
+            return response.json();
+        });
+        // return this.http.get(Config.api + '/user_name_exist/').map((response: Response) =>{ return response.json());
+        // });
     };
     App_service.prototype.get_profile_pic = function () {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));

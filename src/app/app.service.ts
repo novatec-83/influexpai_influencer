@@ -43,7 +43,7 @@ export class App_service {
         'email': email ,
         'password': password,
         'country': country,
-        'address': null,
+        'address': address,
         'relationship': relationship,
         'education': education,
         'phone': phone,
@@ -90,6 +90,15 @@ export class App_service {
         .pipe(tap(res=>{
             return res;
         }))
+}
+checkuser(check){
+  return this.http.get(Config.api+ '/user_name_exist/'+check ).map((response: Response) => {
+    return response.json();
+});
+
+    // return this.http.get(Config.api + '/user_name_exist/').map((response: Response) =>{ return response.json());
+
+    // });
 }
 get_profile_pic(){
   this.currentUser = JSON.parse(localStorage.getItem('currentUser'));

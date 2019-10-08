@@ -13,6 +13,9 @@ import {HttpService} from '../../serv/http-service';
 import {AuthService, GoogleLoginProvider} from "angular5-social-login";
 import Swal from 'sweetalert2'
 import {RecapchaService} from '../../recapcha/recapcha.service';
+import { error } from 'util';
+import swal from 'sweetalert2';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 declare const Buffer;
 const password = new FormControl('', Validators.required);
@@ -35,6 +38,8 @@ export class SignupComponent implements OnInit {
   bearertoken: any = '';
   public model: any = {};
   sub: boolean;
+  password2;
+  wrongPass:boolean;
   step;
   popus = 0;
   RElATIONSHIPS = [
@@ -67,6 +72,8 @@ export class SignupComponent implements OnInit {
   indexes: any= [];
   registerUser: FormGroup;
   submitted = false;
+  check:boolean;
+  userchk: any;
 
   constructor(private http: Http, private loaderHttp: HttpService,private fb: FormBuilder, private router: Router, private fB: FacebookService, private _nav : Router,
   public toastr: ToastsManager, vcr: ViewContainerRef, private recapcha: RecapchaService, private socialAuthService: AuthService, private srvc_obj: App_service) {
@@ -142,6 +149,8 @@ export class SignupComponent implements OnInit {
             relationShip: ['', Validators.required],
             employement_Status: ['', Validators.required],
             gendeR: ['', Validators.required],
+            address:['', Validators.required],
+            password2:['', Validators.required],
             eduCation: ['', Validators.required],
             ciTy: ['', Validators.required],
             counTry: ['', Validators.required],
@@ -253,6 +262,32 @@ export class SignupComponent implements OnInit {
       this.toastr.custom('<span style="color: red">Message in red.</span>', null, {enableHTML: true});
     }
 
+    usernamecheck(val){
+      // alert(val)
+      this.check=false;
+     
+      this.srvc_obj.checkuser(val).subscribe((data) => {
+        this.check = data;
+        // alert(this.check)
+      if(data===false){
+        this.check=false;
+      }
+else if(data===true) {
+  this.check=true;
+  Swal({
+    type: 'error',
+    title: 'Oops...',
+    text: 'Username already exist',
+    
+  })
+}
+
+
+
+      });
+    
+     
+    }
 
 
   getTwAccessToken() {
@@ -292,9 +327,10 @@ export class SignupComponent implements OnInit {
 
 
   onSubmit() {
+
     this.submitted = true;
     this.recaptcha = this.recapcha.check();
-    if (this.recaptcha == true && this.registerUser.invalid) {
+    if (this.recaptcha == true && this.registerUser.invalid && this.check==false && this.wrongPass== true ) {
       this.srvc_obj.register_user(
         this.model.username,
         this.model.name,
@@ -308,7 +344,7 @@ export class SignupComponent implements OnInit {
         this.model.phone,
         this.model.state,
         this.model.city,
-        this.model.employment_status,
+        this.model.employment_status='null',
         this.model.gender
 
        
@@ -326,6 +362,18 @@ export class SignupComponent implements OnInit {
           this.show_Sgnup_Error();
         });
     }
+    else {
+      Swal('oops','please provide the information and then click on sign up button','error');
+    }
+  }
+  showAllert(){
+    if(this.model.password!= this.password2){
+      Swal('oops','Password did not match','error');
+      this.wrongPass= false;
+  }
+  else {
+      this.wrongPass= true;
+  }
   }
 
 }

@@ -8,7 +8,8 @@
         <div class="row">
             <div class="col-md-6">
                 <mat-form-field class="w-100 mb-2">
-                    <input  type="text" matInput placeholder="Username" formControlName="userName" [(ngModel)]="model.username" required>
+                    <input  type="text" matInput placeholder="Username" formControlName="userName" [(ngModel)]="model.username"   (ngModelChange)="usernamecheck(rt.value)"  #rt required>
+                    <!-- <p>{{ userchk}}</p> -->
                     <mat-error *ngIf="submitted && f.userName.errors" class="invalid-feedback">
                       <span *ngIf="f.userName.errors.required">Username is required</span>
                     </mat-error>
@@ -49,15 +50,49 @@
 
 
                         <mat-form-field class="w-100 mb-2">
-                            <input  type="text" matInput placeholder="Password" formControlName="passWord"   name="pass" [(ngModel)]="model.password"  required>
+                          <input [type]="hide ? 'password' : 'text'"  matInput placeholder="Password" formControlName="passWord"   name="pass" [(ngModel)]="model.password"  required>
+                          <i *ngIf= "hide" class="fa fa-eye eye-icon" title="Show Password" (click)="hide = !hide"></i>
+              <i *ngIf= "!hide" class="fa fa-eye-slash eye-icon" title="Hide Password" (click)="hide = !hide"></i>
+                           <!-- <input  type="text" matInput placeholder="Password" formControlName="passWord"   name="pass" [(ngModel)]="model.password"  required> --> 
                             <mat-error *ngIf="submitted && f.passWord.errors" class="invalid-feedback">
                               <span *ngIf="f.passWord.errors.required">Password is required</span>
                             </mat-error>
                           </mat-form-field>
                          
-
-
+                          <mat-form-field class="w-100 mb-2">
+                            <input [type]="hide ? 'password' : 'text'"  matInput placeholder=" Confirm Password"  [(ngModel)]="password2" (focusout)="showAllert()"   type="password" name="pd" formControlName="password2"  required>
+                            <i *ngIf= "hide" class="fa fa-eye eye-icon" title="Show Password" (click)="hide = !hide"></i>
+                            <i *ngIf= "!hide" class="fa fa-eye-slash eye-icon" title="Hide Password" (click)="hide = !hide"></i>
+                            <mat-error *ngIf="submitted && f.password2.errors" class="invalid-feedback">
+                              <span *ngIf="f.password2.errors.required">confirm password is required</span>
+                            </mat-error>
+                          </mat-form-field> 
             </div>
+           
+
+
+
+ <!-- <mat-form-field style="width: 97%">
+                            <input [type]="hide ? 'password' : 'text'" matInput placeholder="Confirm Password"  [(ngModel)]="password2" (focusout)="showAllert()"   type="password" name="pd" required>
+                            <i *ngIf= "hide" class="fa fa-eye eye-icon" title="Show Password" (click)="hide = !hide"></i>
+                            <i *ngIf= "!hide" class="fa fa-eye-slash eye-icon" title="Hide Password" (click)="hide = !hide"></i>
+                            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                              Password is <strong>required</strong>
+                            </mat-error>
+                          </mat-form-field>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="col-md-6">
                 <mat-form-field class="w-100 mb-2">
                     <input  type="text"  matInput id="pho" matInput placeholder="Phone" formControlName="phoNe"  name="pass"   [(ngModel)]="model.phone"required>
@@ -116,6 +151,34 @@
                       <span *ngIf="f.gendeR.errors.required">Gender is required</span>
                     </mat-error>
                     </mat-form-field>
+                    <mat-form-field class="w-100 mb-2">
+                      <input type="text" matInput  name="address" placeholder="Address" formControlName="address"  [(ngModel)]="model.address"required>
+                      <mat-error *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                        <span *ngIf="f.address.errors.required">address is required</span>
+                      </mat-error>
+                    </mat-form-field>
+
+                    
+              
+
+
+
+
+
+
+
+
+
+
+                               <!-- <mat-form-field style="width: 97%">
+                            <input [type]="hide ? 'password' : 'text'" matInput placeholder="Confirm Password"  [(ngModel)]="password2" (focusout)="showAllert()"   type="password" name="pd" required>
+                            <i *ngIf= "hide" class="fa fa-eye eye-icon" title="Show Password" (click)="hide = !hide"></i>
+                            <i *ngIf= "!hide" class="fa fa-eye-slash eye-icon" title="Hide Password" (click)="hide = !hide"></i>
+                            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                              Password is <strong>required</strong>
+                            </mat-error>
+                          </mat-form-field>  -->
+
               
             </div>
             <div class="col-md-3">
