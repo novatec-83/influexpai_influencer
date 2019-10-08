@@ -1,29 +1,38 @@
 <section>
-<div class="container-fluid p-0">
-  <div class="profile showcase-background">
-    <div class="container" >
-      <!-- <img src="{{message.show_image[0]?.image}}"  onerror="this.src='../../../assets/images/logos/Logo1.png'" alt=""> -->
-    </div>
-  </div>
+<div class="container ">
+<h1 class="text-center">Influencer Showcase</h1>
 </div>
-<div class="container" >
+<!-- <div class="container" >
   <div class="col-md-4">
 
   </div>
-</div>
-<div *ngFor="let data of datashowcase ">
+</div> -->
+<!-- <div *ngFor="let data of datashowcase ">
     <p>{{data.city}}</p>
     <p>{{data.email}}</p>
   
-  </div>
-  <div *ngFor="let message of showcase">
-    <p>{{message.title}}</p>
+  </div> -->
+  <div class="container">
+      <div class="row">
+
+     <div class="col-md-4" *ngFor="let message of showcase">
+       <div class="showcase">
+       <img src="{{message.show_image[0]?.image}}" onerror="this.src='../../../assets/images/logos/Logo1.png'" alt="">
+       <div class="influcencer-information">
+    <p><span>Influsencer Title</span>  {{message.title}}</p>
     <p>{{message.description}}</p>
     <p>{{message.urls}}</p>
+    <!-- <p>{{message.city}}</p>
+    <p>{{message.email}}</p> -->
     <p>{{message.status}}</p>
+  </div>
     <!-- <p *ngIf="{{show_image.show_image}} === P">Pending</p> -->
     <!-- <p *ngIf="messgae.status == N">Not Approved </p>
     <p *ngIf="messgae.status == A">Approved </p> -->
-    <p> <img src="{{message.show_image[0]?.image}}" onerror="this.src='../../../assets/images/logos/Logo1.png'" alt=""></p>
+  </div>
+  </div>
+  </div>
+
   </div>
 </section>
+
