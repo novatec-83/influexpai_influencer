@@ -59,7 +59,7 @@
       <label>Select Category</label>
       </div>
       <div class="col-lg-9">
-        <mat-form-field style="width: 100%;" class="catagery">
+        <mat-form-field style="width: 100%;" class="catagery mt-4">
       <mat-select placeholder="{{'Please Select Category'}}"  (change)="selectCat($event.value)" required [(ngModel)]="model.catID" ngDefaultControl [ngModelOptions]="{standalone: true}"  style="width: 100%">
       <mat-option *ngFor="let option of options "  [value]="option.id" >{{ option.name }}</mat-option>
       </mat-select>
